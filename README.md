@@ -155,7 +155,7 @@ The repository is organized and presented by **MEMAR ELECTRONIC SANAT (MES)** to
 - **[Open the online component catalog (GitHub Pages)](https://memar-electronic-sanat.github.io/Altium-Library/)**
 - [PCB libraries](./AltiumPCBLIB/)
 - [Schematic libraries](./AltiumSCHLIB/)
-- [Component database (CSV)](./DB_Chilaboard_Altium-Library.csv)
+- [Component database (CSV)](./DB_MEMAR_Altium-Library.csv)
 - [Images and graphics](./Images/)
 
 ## Online catalog
@@ -178,7 +178,7 @@ The bilingual FA/EN interface (UI version 1.8) includes:
 - Direct links to the corresponding library files in the GitHub repository
 - Responsive layout for desktop and mobile screens
 
-The catalog loads its component data from [DB_Chilaboard_Altium-Library.csv](./DB_Chilaboard_Altium-Library.csv) in the repository root. For reliable operation, serve the page through GitHub Pages or an HTTP web server. Opening the HTML file directly with the `file://` protocol may prevent the browser from loading the CSV database.
+The catalog loads its component data from [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) in the repository root. For reliable operation, serve the page through GitHub Pages or an HTTP web server. Opening the HTML file directly with the `file://` protocol may prevent the browser from loading the CSV database.
 
 ## Repository structure
 
