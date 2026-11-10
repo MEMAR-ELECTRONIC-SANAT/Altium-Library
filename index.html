@@ -8,7 +8,7 @@
    Shahim Vedaei <shahim.vedaei@gmail.com>
    Copywrite: Chilaboard 2026
    -->
-  <title>ChilaBoard - Component Library</title>
+  <title>MES - Component Library</title>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -160,24 +160,24 @@
   <aside id="sidebar">
     <div class="brand">
       <div class="brand-mark"><i data-lucide="cpu" aria-hidden="true"></i></div>
-      <div><div class="brand-name">ChilaBoard</div><div class="brand-caption">Altium component library</div></div>
+      <div><div class="brand-name">MES</div><div class="brand-caption">MES · Altium component library</div></div>
       <button id="closeSidebar" class="icon-button mobile-only" type="button" aria-label="Close libraries" title="Close libraries"><i data-lucide="x"></i></button>
     </div>
     <div class="sidebar-heading"><h2>Libraries</h2><span id="libraryCount">&mdash;</span></div>
     <label class="library-search"><i data-lucide="search" aria-hidden="true"></i><input id="librarySearch" type="search" placeholder="Find a library" aria-label="Find a library" /></label>
     <nav id="libraryFilters" aria-label="Library filters"></nav>
-    <div class="sidebar-footer"><span class="status-dot"></span>ChilaBoard / Altium</div>
+    <div class="sidebar-footer"><span class="status-dot"></span>MES / Altium</div>
   </aside>
   <button id="sidebarOverlay" aria-label="Close libraries" hidden></button>
 
   <main id="main-content">
     <div class="topbar">
       <div class="breadcrumb"><button id="openSidebar" class="icon-button mobile-only" type="button" aria-label="Open libraries" aria-controls="sidebar" aria-expanded="false" title="Open libraries"><i data-lucide="panel-left"></i></button><span>Workspace</span><i data-lucide="chevron-right" aria-hidden="true"></i><strong>Component library</strong></div>
-      <a class="source-link" href="https://github.com/chilaboard/Altium-Library" target="_blank" rel="noopener noreferrer" title="View GitHub repository"><i data-lucide="github" aria-hidden="true"></i><span>Repository</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+      <div style="display:flex;align-items:center;gap:16px"><button id="languageToggle" class="type-btn" type="button" aria-label="Switch language">فارسی</button><a class="source-link" href="https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library" target="_blank" rel="noopener noreferrer" title="View MES GitHub repository"><i data-lucide="github" aria-hidden="true"></i><span>Repository</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
     </div>
     <div id="content-wrap">
       <header>
-        <div class="page-heading"><div><p class="eyebrow">ChilaBoard catalog</p><h1>Component library</h1></div><span id="databaseStatus" class="database-status"><span class="status-dot"></span><span id="statusText">Loading</span></span></div>
+        <div class="page-heading"><div><p class="eyebrow">MES component catalog</p><h1>Component library</h1></div><span id="databaseStatus" class="database-status"><span class="status-dot"></span><span id="statusText">Loading</span></span></div>
         <div class="stats" aria-label="Catalog totals">
           <div class="stat"><i data-lucide="boxes" aria-hidden="true"></i><div><div id="totalParts" class="stat-value">&mdash;</div><div class="stat-label">Components</div></div></div>
           <div class="stat"><i data-lucide="folder-open" aria-hidden="true"></i><div><div id="totalLibraries" class="stat-value">&mdash;</div><div class="stat-label">Libraries</div></div></div>
@@ -193,7 +193,7 @@
       <div id="resultsContainer" class="loading">Loading component data...</div>
       <div class="pagination" id="paginationControls"></div>
     </div>
-    <footer><span>ChilaBoard component library</span><span>Altium Designer &middot; PCB footprints &amp; schematic symbols</span></footer>
+    <footer><span>MES component library</span><span>Altium Designer &middot; PCB footprints &amp; schematic symbols</span></footer>
   </main>
 
 
@@ -399,7 +399,9 @@
             if (columnIndex === csvColumns.length - 1) {
               if (row['PATH']) {
                 const link = document.createElement('a');
-                link.href = column + row['PATH'];
+                const libraryFile = (row['PATH'] || '').split(/[\\/]/).pop();
+                const libraryFolder = row['TYPE'] === 'PCBLIB' ? 'AltiumPCBLIB' : 'AltiumSCHLIB';
+                link.href = 'https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/blob/main/' + libraryFolder + '/' + libraryFile.split('/').map(encodeURIComponent).join('/');
                 link.className = 'download-link';
                 link.textContent = 'Download';
                 link.title = link.href;
@@ -582,6 +584,90 @@
         document.getElementById('errorBox').textContent = location.protocol === 'file:' ? 'Local file access blocked. Open this page through a local HTTP server.' : error.message;
         refreshIcons();
       }
+    });
+  </script>
+
+
+  <style>
+    #languageToggle { border:1px solid var(--line); background:var(--surface); color:var(--accent); border-radius:5px; padding:7px 12px; font-weight:600; }
+    body[dir="rtl"] { direction:rtl; }
+    body[dir="rtl"] #sidebar { border-right:0; border-left:1px solid var(--line); }
+    body[dir="rtl"] .brand, body[dir="rtl"] .sidebar-heading, body[dir="rtl"] .library-search,
+    body[dir="rtl"] .filter-btn, body[dir="rtl"] .topbar, body[dir="rtl"] .breadcrumb,
+    body[dir="rtl"] .page-heading, body[dir="rtl"] .toolbar, body[dir="rtl"] .results-bar,
+    body[dir="rtl"] footer { direction:rtl; }
+    body[dir="rtl"] .filter-btn, body[dir="rtl"] th, body[dir="rtl"] td { text-align:right; }
+    body[dir="rtl"] #sidebar { right:0; left:auto; }
+    body[dir="rtl"] .source-link { direction:ltr; }
+    body[dir="rtl"] .type-filters { direction:rtl; }
+    @media(max-width:700px) { body[dir="rtl"] #sidebar { transform:translateX(100%); } body[dir="rtl"].sidebar-open #sidebar { transform:translateX(0); } }
+  </style>
+  <script>
+    const mesTranslations = {
+      en: {
+        workspace:'Workspace', componentLibrary:'Component library', libraries:'Libraries',
+        findLibrary:'Find a library', repository:'Repository', catalog:'MES catalog',
+        componentLibraryTitle:'Component library', components:'Components', librariesCount:'Libraries',
+        dataFields:'Data fields', search:'Search components...', allParts:'All parts',
+        footprints:'Footprints', symbols:'Symbols', allLibraries:'All libraries',
+        loading:'Loading component data...', connected:'Connected', unavailable:'Unavailable',
+        noMatches:'No matching components', download:'Download', previous:'Previous page',
+        next:'Next page', parts:'parts', component:'component', componentsPlural:'components'
+      },
+      fa: {
+        workspace:'میز کار', componentLibrary:'کتابخانه قطعات', libraries:'کتابخانه‌ها',
+        findLibrary:'جست‌وجوی کتابخانه', repository:'مخزن گیت‌هاب', catalog:'کتابخانه قطعات MES',
+        componentLibraryTitle:'کتابخانه قطعات', components:'قطعه', librariesCount:'کتابخانه',
+        dataFields:'فیلدهای اطلاعاتی', search:'جست‌وجوی قطعه...', allParts:'همه قطعات',
+        footprints:'فوت‌پرینت‌ها', symbols:'نمادهای شماتیک', allLibraries:'همه کتابخانه‌ها',
+        loading:'در حال بارگذاری اطلاعات قطعات...', connected:'متصل', unavailable:'در دسترس نیست',
+        noMatches:'قطعه‌ای با این مشخصات پیدا نشد', download:'دریافت فایل', previous:'صفحه قبل',
+        next:'صفحه بعد', parts:'قطعه', component:'قطعه', componentsPlural:'قطعه'
+      }
+    };
+    let mesLanguage = 'en';
+    function setMesLanguage(lang) {
+      mesLanguage = lang;
+      const t = mesTranslations[lang];
+      document.documentElement.lang = lang;
+      document.body.dir = lang === 'fa' ? 'rtl' : 'ltr';
+      document.getElementById('languageToggle').textContent = lang === 'fa' ? 'English' : 'فارسی';
+      document.querySelector('.breadcrumb span').textContent = t.workspace;
+      document.querySelector('.breadcrumb strong').textContent = t.componentLibrary;
+      document.querySelector('.sidebar-heading h2').textContent = t.libraries;
+      document.getElementById('librarySearch').placeholder = t.findLibrary;
+      document.querySelector('.source-link span').textContent = t.repository;
+      document.querySelector('.eyebrow').textContent = t.catalog;
+      document.querySelector('h1').textContent = t.componentLibraryTitle;
+      document.querySelectorAll('.stat-label')[0].textContent = t.components;
+      document.querySelectorAll('.stat-label')[1].textContent = t.librariesCount;
+      document.querySelectorAll('.stat-label')[2].textContent = t.dataFields;
+      document.getElementById('searchInput').placeholder = t.search;
+      document.querySelectorAll('.type-btn')[0].textContent = t.allParts;
+      document.querySelectorAll('.type-btn')[1].textContent = t.footprints;
+      document.querySelectorAll('.type-btn')[2].textContent = t.symbols;
+      document.getElementById('selectedLibraryLabel').textContent = t.allLibraries;
+      document.querySelector('footer span:first-child').textContent = 'MES · ' + (lang === 'fa' ? 'کتابخانه قطعات آلتیوم' : 'Altium component library');
+      document.querySelector('footer span:last-child').textContent = lang === 'fa' ? 'Altium Designer · فوت‌پرینت‌های PCB و نمادهای شماتیک' : 'Altium Designer · PCB footprints & schematic symbols';
+      const emptyHeading = document.querySelector('.empty-state h2');
+      if (emptyHeading) emptyHeading.textContent = t.noMatches;
+      document.querySelectorAll('.download-link').forEach(a => a.textContent = t.download);
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        const label = btn.querySelector('.filter-label');
+        if (label && label.textContent === 'All libraries') label.textContent = t.allLibraries;
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('languageToggle').addEventListener('click', () => setMesLanguage(mesLanguage === 'en' ? 'fa' : 'en'));
+      const target = document.getElementById('resultsContainer');
+      new MutationObserver(() => {
+        if (mesLanguage === 'fa') {
+          target.querySelectorAll('.download-link').forEach(a => a.textContent = mesTranslations.fa.download);
+          const heading = target.querySelector('.empty-state h2');
+          if (heading) heading.textContent = mesTranslations.fa.noMatches;
+        }
+      }).observe(target, {childList:true,subtree:true});
+      setMesLanguage('en');
     });
   </script>
 
