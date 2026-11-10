@@ -690,10 +690,10 @@
           button.hidden = !(button.dataset.library || 'All libraries').toLowerCase().includes(query);
         });
       });
-      document.querySelectorAll('.type-btn').forEach(button => {
+      document.querySelectorAll('.type-filters .type-btn').forEach(button => {
         button.onclick = () => {
           selectedType = button.dataset.type;
-          document.querySelectorAll('.type-btn').forEach(option => {
+          document.querySelectorAll('.type-filters .type-btn').forEach(option => {
             const active = option === button;
             option.classList.toggle('active', active);
             option.setAttribute('aria-pressed', String(active));
@@ -775,6 +775,7 @@
     body[dir="rtl"] .type-filters { direction:rtl; }
     @media(max-width:700px) { body[dir="rtl"] #sidebar { transform:translateX(100%); } body[dir="rtl"].sidebar-open #sidebar { transform:translateX(0); } }
   </style>
+  <style>#mesInfoDialog[hidden]{display:none!important}</style>
   <script>
     const mesTranslations = {
       en:{workspace:'Workspace',componentLibrary:'Component library',libraries:'Libraries',findLibrary:'Find a library',repository:'Repository',catalog:'MES component catalog',componentLibraryTitle:'Altium component library',components:'Components',librariesCount:'Libraries',dataFields:'Data fields',search:'Search components...',allParts:'All parts',footprints:'Footprints',symbols:'Symbols',allLibraries:'All libraries',loading:'Loading component data...',connected:'Connected',unavailable:'Unavailable',noMatches:'No matching components',download:'Download',about:'About MES',help:'Help',aboutBody:'<b>MEMAR ELECTRONIC SANAT (MES)</b><br>Reliable electronic design and manufacturing. This catalog provides Altium PCB footprints and schematic symbols. <br><br><a href="https://github.com/MEMAR-ELECTRONIC-SANAT" target="_blank" rel="noopener">GitHub organization</a> · <a href="https://t.me/Memar_Electronic" target="_blank" rel="noopener">Telegram</a> · <a href="https://www.instagram.com/Memar.Electronic" target="_blank" rel="noopener">Instagram</a>',helpBody:'<b>Using the catalog</b><ul><li>Search components by name or fields. Regular-expression syntax is supported.</li><li>Choose a library in the sidebar to filter results.</li><li>Use All parts, Footprints, or Symbols to filter component types.</li><li>Use Download to open the component library file on GitHub.</li><li>Use the language button to switch between English and Persian.</li></ul>'},
@@ -789,7 +790,7 @@
       document.querySelector('.sidebar-heading h2').textContent=t.libraries;document.getElementById('librarySearch').placeholder=t.findLibrary;
       document.querySelector('.source-link span').textContent=t.repository;document.querySelector('.eyebrow').textContent=t.catalog;document.querySelector('h1').textContent=t.componentLibraryTitle;
       document.querySelectorAll('.stat-label')[0].textContent=t.components;document.querySelectorAll('.stat-label')[1].textContent=t.librariesCount;document.querySelectorAll('.stat-label')[2].textContent=t.dataFields;
-      document.getElementById('searchInput').placeholder=t.search;document.querySelectorAll('.type-btn')[0].textContent=t.allParts;document.querySelectorAll('.type-btn')[1].textContent=t.footprints;document.querySelectorAll('.type-btn')[2].textContent=t.symbols;
+      document.getElementById('searchInput').placeholder=t.search;const typeButtons=document.querySelectorAll('.type-filters .type-btn');typeButtons[0].textContent=t.allParts;typeButtons[1].textContent=t.footprints;typeButtons[2].textContent=t.symbols;
       document.getElementById('selectedLibraryLabel').textContent=t.allLibraries;document.querySelector('footer span:first-child').textContent='MES · '+(lang==='fa'?'کتابخانه قطعات آلتیوم':'Altium component library');
       document.querySelector('footer span:last-child').textContent=lang==='fa'?'Altium Designer · فوت‌پرینت‌های PCB و نمادهای شماتیک':'Altium Designer · PCB footprints & schematic symbols';
       document.querySelectorAll('.download-link').forEach(a=>{const icon=a.querySelector('i');a.textContent=t.download;if(icon)a.prepend(icon);});
