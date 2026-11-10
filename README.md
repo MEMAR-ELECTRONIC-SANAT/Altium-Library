@@ -1,3 +1,6 @@
+کتابخانه آلتیوم شامل بیش از ۵۰۰۰ قطعه , با فوت‌پرینت‌های مطابق با استاندارد ⁦IPC⁩ و مدل‌های سه‌بعدی با فرمت ⁦STEP⁩  
+‎ Altium Library with over 5000 components, IPC compliant footprints, including 3D step model
+
 # Altium Library | کتابخانه قطعات Altium Designer
 
 مخزن **Altium-Library** مجموعه‌ای از کتابخانه‌های قطعات الکترونیکی برای استفاده در نرم‌افزار **Altium Designer** است. ساختار مخزن شامل کتابخانه‌های شماتیک و PCB است تا بتوانید نماد قطعه را در طراحی شماتیک و الگوی فیزیکی آن را در طراحی برد به‌کار ببرید.
