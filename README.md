@@ -13,7 +13,7 @@
 - **[ورود به کاتالوگ آنلاین قطعات (GitHub Pages)](https://memar-electronic-sanat.github.io/Altium-Library/)**
 - [مشاهده فایل‌های کتابخانه PCB](./AltiumPCBLIB/)
 - [مشاهده فایل‌های کتابخانه شماتیک](./AltiumSCHLIB/)
-- [دریافت پایگاه داده قطعات (CSV)](./DB_Chilaboard_Altium-Library.csv)
+- [دریافت پایگاه داده قطعات (CSV)](./DB_MEMAR_Altium-Library.csv)
 - [مشاهده تصاویر و منابع گرافیکی](./Images/)
 
 </div>
@@ -24,7 +24,7 @@
 
 فایل [index.html](./index.html) رابط وب این مخزن است. این صفحه اطلاعات قطعات را از فایل CSV موجود در ریشه مخزن می‌خواند و امکان مرور و جست‌وجوی کاتالوگ را فراهم می‌کند.
 
-قابلیت‌های رابط وب (نسخه دوزبانه FA/EN، نسخه رابط 1.3):
+قابلیت‌های رابط وب (نسخه دوزبانه FA/EN، نسخه رابط 1.8):
 
 - رابط کاربری دوزبانه فارسی و انگلیسی با امکان تغییر زبان از نوار بالای صفحه
 - پشتیبانی از چیدمان راست‌به‌چپ (RTL) در حالت فارسی و چپ‌به‌راست (LTR) در حالت انگلیسی
@@ -40,7 +40,7 @@
 - دسترسی مستقیم به پیوند دریافت فایل کتابخانه متناظر از مخزن GitHub
 - طراحی واکنش‌گرا برای نمایشگرهای دسکتاپ و تلفن همراه
 
-کاتالوگ داده‌ها را از فایل [DB_Chilaboard_Altium-Library.csv](./DB_Chilaboard_Altium-Library.csv) در ریشه مخزن دریافت می‌کند. برای عملکرد صحیح، صفحه باید از طریق GitHub Pages یا یک وب‌سرور HTTP اجرا شود؛ بازکردن مستقیم فایل با پروتکل `file://` ممکن است به دلیل محدودیت امنیتی مرورگر در دسترسی به CSV با خطا مواجه شود.
+کاتالوگ داده‌ها را از فایل [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) در ریشه مخزن دریافت می‌کند. برای عملکرد صحیح، صفحه باید از طریق GitHub Pages یا یک وب‌سرور HTTP اجرا شود؛ بازکردن مستقیم فایل با پروتکل `file://` ممکن است به دلیل محدودیت امنیتی مرورگر در دسترسی به CSV با خطا مواجه شود.
 
 ## ساختار مخزن
 
@@ -48,7 +48,7 @@
 |---|---|
 | [AltiumPCBLIB](./AltiumPCBLIB/) | کتابخانه‌های PCB با فرمت `.PcbLib` |
 | [AltiumSCHLIB](./AltiumSCHLIB/) | کتابخانه‌های شماتیک با فرمت `.SchLib` |
-| [DB_Chilaboard_Altium-Library.csv](./DB_Chilaboard_Altium-Library.csv) | پایگاه داده مورد استفاده کاتالوگ آنلاین |
+| [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) | پایگاه داده مورد استفاده کاتالوگ آنلاین |
 | [Images](./Images/) | تصاویر و فایل‌های گرافیکی راهنما |
 | [index.html](./index.html) | رابط وب کاتالوگ قطعات |
 | [.nojekyll](./.nojekyll) | فایل کمکی برای انتشار مستقیم محتوا در GitHub Pages |
@@ -98,7 +98,11 @@
 
 ## پایگاه داده قطعات
 
-فایل [DB_Chilaboard_Altium-Library.csv](./DB_Chilaboard_Altium-Library.csv) داده‌های موردنیاز کاتالوگ آنلاین را نگهداری می‌کند. رابط وب این فایل را بارگذاری کرده و اطلاعات آن را برای جست‌وجو، فیلتر و نمایش قطعات به‌کار می‌گیرد.
+فایل CSV فعلی شامل **10,979 رکورد** و **12 ستون** است. در داده‌های قابل دسته‌بندی، 4,284 رکورد از نوع `PCBLIB` و 6,688 رکورد از نوع `SCHLIB` شناسایی شد. فایل در مسیر ریشه مخزن قرار دارد و کاتالوگ نسخه 1.8 آن را با نام `DB_MEMAR_Altium-Library.csv` بارگذاری می‌کند.
+
+**نکته اعتبارسنجی داده:** در بررسی ساختار CSV، 7 ردیف دارای مقدار غیرمنتظره در ستون `TYPE` و مسیر نامعتبر/خالی شناسایی شد؛ همچنین 7 رکورد دیگر از نوع `SCHLIB` فاقد مقدار `PATH` هستند. بنابراین تعداد رکوردها، شمارش اولیه است و این موارد پیش از اتکا به همه لینک‌های دانلود باید در فایل داده اصلاح شوند. عنوان ستون دوازدهم نیز با مقادیر تاریخ/زمان ردیف‌ها هم‌خوان نیست و بهتر است به نامی مانند `LAST_MODIFIED` تغییر کند.
+
+فایل [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) داده‌های موردنیاز کاتالوگ آنلاین را نگهداری می‌کند. رابط وب این فایل را بارگذاری کرده و اطلاعات آن را برای جست‌وجو، فیلتر و نمایش قطعات به‌کار می‌گیرد.
 
 در صورت ویرایش ساختار یا نام ستون‌های CSV، منطق پردازش داده در `index.html` نیز باید متناسب با آن بررسی و به‌روزرسانی شود.
 
@@ -158,7 +162,7 @@ The repository is organized and presented by **MEMAR ELECTRONIC SANAT (MES)** to
 
 [index.html](./index.html) provides the web interface. It loads component information from the CSV database stored in the repository root.
 
-The bilingual FA/EN interface (UI version 1.3) includes:
+The bilingual FA/EN interface (UI version 1.8) includes:
 
 - Persian and English language switching from the top toolbar
 - Right-to-left (RTL) layout for Persian and left-to-right (LTR) layout for English
@@ -182,7 +186,7 @@ The catalog loads its component data from [DB_Chilaboard_Altium-Library.csv](./D
 |---|---|
 | [AltiumPCBLIB](./AltiumPCBLIB/) | PCB libraries in `.PcbLib` format |
 | [AltiumSCHLIB](./AltiumSCHLIB/) | Schematic libraries in `.SchLib` format |
-| [DB_Chilaboard_Altium-Library.csv](./DB_Chilaboard_Altium-Library.csv) | Component database used by the web catalog |
+| [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) | Component database used by the web catalog |
 | [Images](./Images/) | Repository images and graphics |
 | [index.html](./index.html) | Web-based component catalog |
 | [.nojekyll](./.nojekyll) | Helper file for direct content publishing with GitHub Pages |
@@ -219,7 +223,11 @@ Run **ERC** and **DRC** checks as part of the design review. Library availabilit
 
 ## Component database
 
-[DB_Chilaboard_Altium-Library.csv](./DB_Chilaboard_Altium-Library.csv) stores the data used by the online catalog. The web interface loads this file to search, filter, and display component records.
+The current CSV contains **10,979 records** and **12 columns**. The recognized component types include 4,284 `PCBLIB` records and 6,688 `SCHLIB` records. The v1.8 web catalog loads this root-level file as `DB_MEMAR_Altium-Library.csv`.
+
+**Data-validation note:** The review identified 7 rows with unexpected values in the `TYPE` column and invalid/empty library paths, plus 7 additional `SCHLIB` records with an empty `PATH`. These records should be corrected before relying on every catalog entry's download link. The twelfth column header also does not match the date/time values stored in that column; consider renaming it to a field such as `LAST_MODIFIED`.
+
+[DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) stores the data used by the online catalog. The web interface loads this file to search, filter, and display component records.
 
 If the CSV structure or column names are changed, review the data-processing logic in `index.html` accordingly.
 
