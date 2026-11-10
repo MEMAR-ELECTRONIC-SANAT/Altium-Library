@@ -24,17 +24,23 @@
 
 فایل [index.html](./index.html) رابط وب این مخزن است. این صفحه اطلاعات قطعات را از فایل CSV موجود در ریشه مخزن می‌خواند و امکان مرور و جست‌وجوی کاتالوگ را فراهم می‌کند.
 
-قابلیت‌های رابط وب:
+قابلیت‌های رابط وب (نسخه دوزبانه FA/EN، نسخه رابط 1.3):
 
-- جست‌وجوی قطعات بر اساس اطلاعات ثبت‌شده در پایگاه داده
+- رابط کاربری دوزبانه فارسی و انگلیسی با امکان تغییر زبان از نوار بالای صفحه
+- پشتیبانی از چیدمان راست‌به‌چپ (RTL) در حالت فارسی و چپ‌به‌راست (LTR) در حالت انگلیسی
+- ذخیره انتخاب زبان در مرورگر و بازیابی آن در مراجعه بعدی
+- تم آبی کبالتی با جزئیات کهربایی و فیروزه‌ای، هماهنگ با هویت بصری MES
+- پنجره **About (درباره ما)** برای معرفی مجموعه و راه‌های ارتباطی
+- پنجره **Help (راهنما)** شامل معرفی قابلیت‌ها، روش جست‌وجو و فیلتر، نحوه دریافت کتابخانه‌ها و نکات فنی
+- صفحه آغازین (Splash Screen) با نشان تجاری MES
+- جست‌وجوی قطعات بر اساس فیلدهای پایگاه داده؛ پشتیبانی از عبارت‌های منظم (Regular Expressions)
 - فیلتر قطعات بر اساس نوع کتابخانه؛ شامل **Footprint** و **Schematic Symbol**
-- فیلتر و انتخاب کتابخانه موردنظر
-- نمایش گروه‌بندی‌شده قطعات و صفحه‌بندی نتایج
-- دسترسی به پیوند دریافت فایل کتابخانه متناظر
-- رابط دوزبانه فارسی و انگلیسی
-- طراحی واکنش‌گرا با هویت بصری آبی و کهربایی MES
+- فیلتر و انتخاب کتابخانه موردنظر از نوار کناری
+- نمایش گروه‌بندی‌شده قطعات، شمارنده‌ها و صفحه‌بندی نتایج
+- دسترسی مستقیم به پیوند دریافت فایل کتابخانه متناظر از مخزن GitHub
+- طراحی واکنش‌گرا برای نمایشگرهای دسکتاپ و تلفن همراه
 
-برای عملکرد صحیح کاتالوگ، فایل HTML باید از طریق وب‌سرور یا GitHub Pages اجرا شود؛ بازکردن مستقیم آن با پروتکل `file://` ممکن است به دلیل محدودیت دسترسی مرورگر به فایل CSV با خطا مواجه شود.
+کاتالوگ داده‌ها را از فایل [DB_Chilaboard_Altium-Library.csv](./DB_Chilaboard_Altium-Library.csv) در ریشه مخزن دریافت می‌کند. برای عملکرد صحیح، صفحه باید از طریق GitHub Pages یا یک وب‌سرور HTTP اجرا شود؛ بازکردن مستقیم فایل با پروتکل `file://` ممکن است به دلیل محدودیت امنیتی مرورگر در دسترسی به CSV با خطا مواجه شود.
 
 ## ساختار مخزن
 
@@ -152,17 +158,23 @@ The repository is organized and presented by **MEMAR ELECTRONIC SANAT (MES)** to
 
 [index.html](./index.html) provides the web interface. It loads component information from the CSV database stored in the repository root.
 
-The interface provides:
+The bilingual FA/EN interface (UI version 1.3) includes:
 
-- Component search across the available database fields
+- Persian and English language switching from the top toolbar
+- Right-to-left (RTL) layout for Persian and left-to-right (LTR) layout for English
+- Browser-based language preference persistence across visits
+- Cobalt-blue theme with amber and teal accents, aligned with MES visual identity
+- **About** dialog introducing the organization and contact channels
+- **Help** dialog covering catalog features, search and filters, library downloads, and technical notes
+- MES-branded splash screen
+- Component search across database fields, including regular-expression (Regex) queries
 - Type filters for **PCB Footprints** and **Schematic Symbols**
-- Library selection and filtering
-- Grouped results and pagination
-- Links to the corresponding library files
-- Persian and English user interfaces
-- Responsive layout with MES blue-and-amber branding
+- Sidebar library selection and filtering
+- Grouped results, live counters, and pagination
+- Direct links to the corresponding library files in the GitHub repository
+- Responsive layout for desktop and mobile screens
 
-For reliable operation, serve the page through a web server or GitHub Pages. Opening the HTML file directly with the `file://` protocol may prevent the browser from loading the CSV database.
+The catalog loads its component data from [DB_Chilaboard_Altium-Library.csv](./DB_Chilaboard_Altium-Library.csv) in the repository root. For reliable operation, serve the page through GitHub Pages or an HTTP web server. Opening the HTML file directly with the `file://` protocol may prevent the browser from loading the CSV database.
 
 ## Repository structure
 
