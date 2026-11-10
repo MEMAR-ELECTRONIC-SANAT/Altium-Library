@@ -98,9 +98,11 @@
 
 ## پایگاه داده قطعات
 
-فایل CSV فعلی شامل **10,979 رکورد** و **12 ستون** است. در داده‌های قابل دسته‌بندی، 4,284 رکورد از نوع `PCBLIB` و 6,688 رکورد از نوع `SCHLIB` شناسایی شد. فایل در مسیر ریشه مخزن قرار دارد و کاتالوگ نسخه 1.8 آن را با نام `DB_MEMAR_Altium-Library.csv` بارگذاری می‌کند.
+فایل CSV فعلی شامل **10,972 رکورد** و **12 ستون** است: 4,284 رکورد از نوع `PCBLIB` و 6,688 رکورد از نوع `SCHLIB`. کاتالوگ نسخه 1.8 این فایل را از ریشه مخزن و با نام `DB_MEMAR_Altium-Library.csv` بارگذاری می‌کند.
 
-**نکته اعتبارسنجی داده:** در بررسی ساختار CSV، 7 ردیف دارای مقدار غیرمنتظره در ستون `TYPE` و مسیر نامعتبر/خالی شناسایی شد؛ همچنین 7 رکورد دیگر از نوع `SCHLIB` فاقد مقدار `PATH` هستند. بنابراین تعداد رکوردها، شمارش اولیه است و این موارد پیش از اتکا به همه لینک‌های دانلود باید در فایل داده اصلاح شوند. عنوان ستون دوازدهم نیز با مقادیر تاریخ/زمان ردیف‌ها هم‌خوان نیست و بهتر است به نامی مانند `LAST_MODIFIED` تغییر کند.
+**اصلاحات ساختاری:** 7 رکورد مربوط به قطعات `LTC2955`، `LTC2954`، `LTC2951` و `MAX16054` با 7 ردیف اطلاعاتی جابه‌جا‌شده ادغام شدند؛ مسیر کتابخانه به `AltiumSCHLIB/pwr_onoff_toggle.SchLib` اصلاح شد. نام ستون دوازدهم نیز از URL نامرتبط به `LAST_MODIFIED` تغییر یافت. پس از اصلاح، تمام 10,972 رکورد دقیقاً 12 ستون دارند و هیچ رکوردی فاقد `PATH` نیست.
+
+**نکته اعتبارسنجی باقی‌مانده:** یک مسیر دیگر در داده‌ها با فایل موجود در مخزن تطبیق ندارد: `AltiumSCHLIB/adc_power_monitor.SchLib`. این مورد خارج از 14 ردیف اصلاح‌شده است و برای سالم بودن لینک مربوط به آن باید جداگانه بررسی شود.
 
 فایل [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) داده‌های موردنیاز کاتالوگ آنلاین را نگهداری می‌کند. رابط وب این فایل را بارگذاری کرده و اطلاعات آن را برای جست‌وجو، فیلتر و نمایش قطعات به‌کار می‌گیرد.
 
@@ -223,9 +225,11 @@ Run **ERC** and **DRC** checks as part of the design review. Library availabilit
 
 ## Component database
 
-The current CSV contains **10,979 records** and **12 columns**. The recognized component types include 4,284 `PCBLIB` records and 6,688 `SCHLIB` records. The v1.8 web catalog loads this root-level file as `DB_MEMAR_Altium-Library.csv`.
+The current CSV contains **10,972 records** and **12 columns**: 4,284 `PCBLIB` records and 6,688 `SCHLIB` records. The v1.8 web catalog loads this root-level file as `DB_MEMAR_Altium-Library.csv`.
 
-**Data-validation note:** The review identified 7 rows with unexpected values in the `TYPE` column and invalid/empty library paths, plus 7 additional `SCHLIB` records with an empty `PATH`. These records should be corrected before relying on every catalog entry's download link. The twelfth column header also does not match the date/time values stored in that column; consider renaming it to a field such as `LAST_MODIFIED`.
+**Structural repairs:** The 7 records for `LTC2955`, `LTC2954`, `LTC2951`, and `MAX16054` were reconstructed by merging them with their 7 displaced continuation rows. Their library path now points to `AltiumSCHLIB/pwr_onoff_toggle.SchLib`. The twelfth column header was changed from an unrelated URL to `LAST_MODIFIED`. After repair, all 10,972 records have exactly 12 columns and none has an empty `PATH`.
+
+**Remaining validation note:** One other CSV path does not match a file in the repository: `AltiumSCHLIB/adc_power_monitor.SchLib`. This is outside the 14 repaired rows and should be checked separately before relying on that entry's download link.
 
 [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) stores the data used by the online catalog. The web interface loads this file to search, filter, and display component records.
 
