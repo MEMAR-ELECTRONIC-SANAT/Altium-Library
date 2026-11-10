@@ -1,80 +1,120 @@
 ![Altium Library — MES](Images/altium-library-banner.svg)
 
-# Altium Library | کتابخانه قطعات Altium Designer
+# کتابخانه قطعات Altium Designer | MES Altium Library
 
-مخزن **Altium-Library** مجموعه‌ای از کتابخانه‌های قطعات الکترونیکی برای استفاده در نرم‌افزار **Altium Designer** است. ساختار مخزن شامل کتابخانه‌های شماتیک و PCB است تا بتوانید نماد قطعه را در طراحی شماتیک و الگوی فیزیکی آن را در طراحی برد به‌کار ببرید.
+مخزن **MES Altium Library** مجموعه‌ای از کتابخانه‌های قطعات الکترونیکی برای استفاده در نرم‌افزار **Altium Designer** است. این مجموعه، فایل‌های کتابخانه شماتیک و PCB را همراه با یک کاتالوگ وب برای جست‌وجو و دریافت فایل‌های قطعات ارائه می‌کند.
 
-این مخزن بر پایه پروژه **Chilaboard Altium Library** معرفی شده است و نسخه اولیه README به مجموعه‌ای با بیش از ۵۰۰۰ قطعه اشاره می‌کند. برای جست‌وجوی آنلاین قطعات نیز می‌توانید از پیوند زیر استفاده کنید.
+**معمار الکترونیک صنعت (MES)** با هدف فراهم‌کردن منابع کاربردی برای طراحی مدارهای الکترونیکی، این مخزن را سازمان‌دهی و ارائه می‌کند.
 
-- **جست‌وجوی آنلاین قطعات:** [Altium Library Online Search](https://chilaboard.github.io/Altium-Library/)
+<div dir="rtl">
+
+## دسترسی سریع
+
+- **[ورود به کاتالوگ آنلاین قطعات (GitHub Pages)](https://memar-electronic-sanat.github.io/Altium-Library/)**
+- [مشاهده فایل‌های کتابخانه PCB](./AltiumPCBLIB/)
+- [مشاهده فایل‌های کتابخانه شماتیک](./AltiumSCHLIB/)
+- [دریافت پایگاه داده قطعات (CSV)](./DB_Chilaboard_Altium-Library.csv)
+- [مشاهده تصاویر و منابع گرافیکی](./Images/)
+
+</div>
 
 ---
 
-## ساختار کتابخانه‌ها
+## معرفی کاتالوگ آنلاین
+
+فایل [index.html](./index.html) رابط وب این مخزن است. این صفحه اطلاعات قطعات را از فایل CSV موجود در ریشه مخزن می‌خواند و امکان مرور و جست‌وجوی کاتالوگ را فراهم می‌کند.
+
+قابلیت‌های رابط وب:
+
+- جست‌وجوی قطعات بر اساس اطلاعات ثبت‌شده در پایگاه داده
+- فیلتر قطعات بر اساس نوع کتابخانه؛ شامل **Footprint** و **Schematic Symbol**
+- فیلتر و انتخاب کتابخانه موردنظر
+- نمایش گروه‌بندی‌شده قطعات و صفحه‌بندی نتایج
+- دسترسی به پیوند دریافت فایل کتابخانه متناظر
+- رابط دوزبانه فارسی و انگلیسی
+- طراحی واکنش‌گرا با هویت بصری آبی و کهربایی MES
+
+برای عملکرد صحیح کاتالوگ، فایل HTML باید از طریق وب‌سرور یا GitHub Pages اجرا شود؛ بازکردن مستقیم آن با پروتکل `file://` ممکن است به دلیل محدودیت دسترسی مرورگر به فایل CSV با خطا مواجه شود.
+
+## ساختار مخزن
+
+| مسیر | محتوا |
+|---|---|
+| [AltiumPCBLIB](./AltiumPCBLIB/) | کتابخانه‌های PCB با فرمت `.PcbLib` |
+| [AltiumSCHLIB](./AltiumSCHLIB/) | کتابخانه‌های شماتیک با فرمت `.SchLib` |
+| [DB_Chilaboard_Altium-Library.csv](./DB_Chilaboard_Altium-Library.csv) | پایگاه داده مورد استفاده کاتالوگ آنلاین |
+| [Images](./Images/) | تصاویر و فایل‌های گرافیکی راهنما |
+| [index.html](./index.html) | رابط وب کاتالوگ قطعات |
+| [.nojekyll](./.nojekyll) | فایل کمکی برای انتشار مستقیم محتوا در GitHub Pages |
+
+## انواع کتابخانه
 
 ### ۱. کتابخانه PCB — Footprint
 
 مسیر: [AltiumPCBLIB](./AltiumPCBLIB/)
 
-این پوشه برای نگهداری کتابخانه‌های PCB با فرمت **.PcbLib** در نظر گرفته شده است. هر Footprint نمایانگر الگوی فیزیکی یک قطعه روی برد است و معمولاً شامل پدها (Pads)، شماره‌گذاری، لایه‌های مکانیکی و چاپ سیلک (Silkscreen)، محدوده بدنه و در صورت وجود مدل سه‌بعدی (3D Body) می‌شود.
+فایل‌های `.PcbLib` الگوی فیزیکی قطعات را در محیط PCB تعریف می‌کنند. این الگوها می‌توانند شامل موارد زیر باشند:
 
-### ۲. کتابخانه شماتیک — Symbol
+- پدها (Pads) و شماره‌گذاری پایه‌ها
+- خطوط و محدوده‌های مکانیکی بدنه
+- علائم چاپ سیلک (Silkscreen)
+- لایه‌های کمکی و اطلاعات مونتاژ
+- مدل سه‌بعدی قطعه (3D Body)، در صورت وجود
+
+### ۲. کتابخانه شماتیک — Schematic Symbol
 
 مسیر: [AltiumSCHLIB](./AltiumSCHLIB/)
 
-این پوشه برای نگهداری کتابخانه‌های شماتیک با فرمت **.SchLib** است. هر Symbol نمایش منطقی قطعه در نقشه شماتیک را فراهم می‌کند و می‌تواند شامل پایه‌ها (Pins) با نام، شماره و نوع الکتریکی، شکل گرافیکی، مشخصات قطعه و ارتباط با Footprint متناظر باشد.
-
----
-
-## ارتباط کتابخانه شماتیک و PCB
-
-در جریان معمول طراحی، ابتدا Symbol قطعه از کتابخانه شماتیک در سند **Schematic** قرار می‌گیرد و سپس Footprint متناظر آن برای انتقال به محیط **PCB** اختصاص داده می‌شود.
-
-| بخش | فرمت فایل | کاربرد |
-|---|---|---|
-| کتابخانه شماتیک | .SchLib | نمایش منطقی قطعه در نقشه مدار |
-| کتابخانه PCB | .PcbLib | تعریف پدها و الگوی فیزیکی قطعه روی برد |
-
-وجود Symbol و Footprint متناظر، به‌تنهایی تضمین‌کننده صحت قطعه نیست؛ تطبیق دقیق آن‌ها با دیتاشیت سازنده ضروری است.
+فایل‌های `.SchLib` نمایش منطقی قطعات را در نقشه شماتیک فراهم می‌کنند و ممکن است شامل پایه‌ها (Pins)، نام و شماره پایه، نوع الکتریکی پایه‌ها، مشخصات قطعه و ارتباط با Footprint متناظر باشند.
 
 ## روش استفاده در Altium Designer
 
-1. مخزن را دانلود یا Clone کنید.
-2. در Altium Designer از پنل **Libraries** یا بخش **Components**، کتابخانه موردنیاز را اضافه کنید.
-3. برای قطعات شماتیک، فایل‌های **.SchLib** و برای الگوهای PCB، فایل‌های **.PcbLib** را انتخاب کنید.
-4. در صورت نیاز، مسیر کتابخانه‌ها را در تنظیمات جست‌وجوی کتابخانه یا Workspace خود ثبت کنید.
-5. پس از قرار دادن قطعه در شماتیک، تخصیص Footprint و ارتباط آن با قطعه را بررسی کنید.
+1. مخزن را با گزینه **Download ZIP** دریافت یا با Git کلون کنید.
+2. در Altium Designer پنل **Libraries** یا **Components** را باز کنید.
+3. فایل کتابخانه موردنیاز را اضافه کنید:
+   - برای نماد شماتیک: فایل `.SchLib`
+   - برای الگوی PCB: فایل `.PcbLib`
+4. نماد قطعه را در شماتیک قرار دهید و Footprint متناظر را به آن اختصاص دهید.
+5. پیش از انتقال طراحی به محیط PCB، ارتباط Symbol و Footprint را بررسی کنید.
 
-## نکات فنی و کنترل کیفیت
+## کنترل فنی پیش از استفاده
 
-پیش از استفاده از هر قطعه در طراحی نهایی، موارد زیر را بررسی کنید:
+اطلاعات کتابخانه باید با دیتاشیت و نقشه مکانیکی قطعه واقعی تطبیق داده شود. به‌ویژه موارد زیر را کنترل کنید:
 
-- شماره‌گذاری و ترتیب پایه‌های Symbol با دیتاشیت قطعه مطابقت داشته باشد.
-- شماره، تعداد، ابعاد و فاصله پدهای Footprint با پکیج واقعی قطعه یکسان باشد.
-- ابعاد بدنه و محدوده‌های مونتاژ با نقشه مکانیکی دیتاشیت کنترل شوند.
-- نوع پایه‌ها و اتصالات تغذیه، زمین و سیگنال در Symbol به‌درستی تعریف شده باشند.
-- در صورت وجود مدل سه‌بعدی، جهت‌گیری و ابعاد آن با قطعه واقعی تطبیق داده شود.
-- پس از افزودن قطعات به پروژه، بررسی‌های **ERC** و **DRC** انجام شوند.
+- شماره پایه‌ها و ترتیب آن‌ها در Symbol
+- تعداد، شماره‌گذاری، ابعاد و فاصله پدها در Footprint
+- ابعاد بدنه و محدوده‌های مکانیکی پکیج
+- نوع الکتریکی پایه‌ها و اتصالات تغذیه و زمین
+- جهت‌گیری و ابعاد مدل سه‌بعدی، در صورت وجود
+- تطبیق ارتباط بین Symbol و Footprint
 
-**توجه:** کتابخانه‌ها ابزار کمکی طراحی هستند. مسئولیت بررسی نهایی Symbol، Footprint، شماره پایه‌ها و انطباق با دیتاشیت بر عهده طراح است.
+پس از افزودن قطعات به پروژه، بررسی‌های **ERC** و **DRC** را اجرا کنید. وجود یک قطعه در کتابخانه به معنی تأیید صحت آن برای تولید نیست؛ بررسی نهایی بر اساس دیتاشیت سازنده بر عهده طراح است.
 
-## به‌روزرسانی فهرست قطعات
+## پایگاه داده قطعات
 
-در نسخه اولیه این پروژه، برای به‌روزرسانی فهرست قطعات از اسکریپت زیر نام برده شده است:
+فایل [DB_Chilaboard_Altium-Library.csv](./DB_Chilaboard_Altium-Library.csv) داده‌های موردنیاز کاتالوگ آنلاین را نگهداری می‌کند. رابط وب این فایل را بارگذاری کرده و اطلاعات آن را برای جست‌وجو، فیلتر و نمایش قطعات به‌کار می‌گیرد.
 
-```bash
-python scanlib.py
-```
+در صورت ویرایش ساختار یا نام ستون‌های CSV، منطق پردازش داده در `index.html` نیز باید متناسب با آن بررسی و به‌روزرسانی شود.
 
-این دستور را در محیط و مسیر مناسب پروژه اجرا کنید؛ پیش از اجرا، وجود فایل **scanlib.py** و پیش‌نیازهای آن را در نسخه دریافت‌شده بررسی کنید.
+## مشارکت و گزارش خطا
 
-## مشارکت و توسعه
+برای پیشنهاد اصلاح یا افزودن کتابخانه جدید، از بخش [Issues](https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/issues) استفاده کنید. هنگام گزارش خطا، در صورت امکان شماره قطعه، سازنده، لینک دیتاشیت و توضیح دقیق مغایرت را ارائه دهید.
 
-برای توسعه این مجموعه می‌توانید کتابخانه‌های جدید یا اصلاحات مربوط به قطعات موجود را در مخزن مشارکت دهید. هنگام افزودن یا اصلاح قطعه، لطفاً نام‌گذاری منظم، تطبیق با دیتاشیت و هماهنگی بین Symbol و Footprint متناظر را رعایت کنید.
+در مشارکت‌ها لطفاً این موارد را رعایت کنید:
+
+- نام‌گذاری فایل‌ها و قطعات روشن و یکپارچه باشد.
+- شماره پایه‌ها و ابعاد Footprint با دیتاشیت کنترل شوند.
+- ارتباط Symbol و Footprint بررسی شود.
+- تغییرات پیشنهادی همراه با مرجع فنی معتبر ارائه شوند.
+
+## مجوز استفاده
+
+شرایط استفاده، بازتوزیع و تغییر محتوای مخزن تابع فایل [LICENSE](./LICENSE) است. پیش از استفاده در پروژه‌های تجاری یا بازنشر محتوا، متن مجوز را مطالعه کنید.
 
 ## تصاویر و دیاگرام‌های راهنما
 
-در حال حاضر تصویر یا دیاگرام مستقلی در این بخش از README معرفی نشده است. در صورت افزودن تصاویر راهنما به مخزن، پیوند آن‌ها در همین بخش قرار خواهد گرفت.
+- [مشاهده پوشه تصاویر مخزن](./Images/)
+- [تصویر سربرگ کتابخانه Altium](./Images/altium-library-banner.svg)
 
 ---
 
@@ -96,63 +136,102 @@ python scanlib.py
 
 ## Overview
 
-**Altium-Library** is a collection of electronic component libraries for **Altium Designer**. It provides schematic symbols and PCB footprints used during circuit design and printed circuit board layout.
+**MES Altium Library** is a collection of electronic component libraries for **Altium Designer**. The repository provides schematic symbols, PCB footprints, a CSV component database, and a web-based catalog for browsing and locating library files.
 
-The repository is introduced as being based on **Chilaboard Altium Library**. The original README refers to a collection of more than 5,000 components. Online component search is available here:
+The repository is organized and presented by **MEMAR ELECTRONIC SANAT (MES)** to provide practical resources for electronic design.
 
-- **Online component search:** [Altium Library Online Search](https://chilaboard.github.io/Altium-Library/)
+## Quick access
 
-## Library directories
+- **[Open the online component catalog (GitHub Pages)](https://memar-electronic-sanat.github.io/Altium-Library/)**
+- [PCB libraries](./AltiumPCBLIB/)
+- [Schematic libraries](./AltiumSCHLIB/)
+- [Component database (CSV)](./DB_Chilaboard_Altium-Library.csv)
+- [Images and graphics](./Images/)
+
+## Online catalog
+
+[index.html](./index.html) provides the web interface. It loads component information from the CSV database stored in the repository root.
+
+The interface provides:
+
+- Component search across the available database fields
+- Type filters for **PCB Footprints** and **Schematic Symbols**
+- Library selection and filtering
+- Grouped results and pagination
+- Links to the corresponding library files
+- Persian and English user interfaces
+- Responsive layout with MES blue-and-amber branding
+
+For reliable operation, serve the page through a web server or GitHub Pages. Opening the HTML file directly with the `file://` protocol may prevent the browser from loading the CSV database.
+
+## Repository structure
+
+| Path | Contents |
+|---|---|
+| [AltiumPCBLIB](./AltiumPCBLIB/) | PCB libraries in `.PcbLib` format |
+| [AltiumSCHLIB](./AltiumSCHLIB/) | Schematic libraries in `.SchLib` format |
+| [DB_Chilaboard_Altium-Library.csv](./DB_Chilaboard_Altium-Library.csv) | Component database used by the web catalog |
+| [Images](./Images/) | Repository images and graphics |
+| [index.html](./index.html) | Web-based component catalog |
+| [.nojekyll](./.nojekyll) | Helper file for direct content publishing with GitHub Pages |
+
+## Library types
 
 ### 1. PCB Footprints
 
 Directory: [AltiumPCBLIB](./AltiumPCBLIB/)
 
-This directory contains PCB libraries in **.PcbLib** format. A footprint defines the physical land pattern of a component, including pads, pad numbering, silkscreen, mechanical outlines and, where available, 3D bodies.
+The `.PcbLib` files define the physical land patterns used in PCB layout. A footprint may contain pads and pad numbering, mechanical outlines, silkscreen markings, assembly information, and a 3D body where available.
 
 ### 2. Schematic Symbols
 
 Directory: [AltiumSCHLIB](./AltiumSCHLIB/)
 
-This directory contains schematic libraries in **.SchLib** format. A schematic symbol represents the logical function and pins of a component. It may also include component parameters and an associated PCB footprint.
+The `.SchLib` files define the logical representation of components in schematics. A symbol may include pins, pin names and numbers, electrical pin types, component parameters, and a link to its corresponding PCB footprint.
 
-## Using the libraries
+## Using the libraries in Altium Designer
 
-1. Clone or download this repository.
-2. In Altium Designer, open the **Libraries** or **Components** panel.
-3. Add the required **.SchLib** or **.PcbLib** files.
-4. Place schematic symbols in your schematic and assign the corresponding PCB footprints.
-5. Verify component mappings before transferring the design to the PCB document.
+1. Download the repository using **Download ZIP** or clone it with Git.
+2. Open the **Libraries** or **Components** panel in Altium Designer.
+3. Add the required library file:
+   - Schematic symbol: `.SchLib`
+   - PCB footprint: `.PcbLib`
+4. Place the symbol in the schematic and assign its corresponding footprint.
+5. Verify the symbol-to-footprint mapping before transferring the design to PCB.
 
 ## Design verification
 
-Always verify pin numbers, pin types, pad dimensions, pad pitch, package outline and footprint orientation against the manufacturer's datasheet. Run **ERC** and **DRC** checks as part of the design review.
+Always validate library data against the manufacturer's datasheet and package drawing. Check pin numbering, pad count and dimensions, pad pitch, package outline, electrical pin types, and 3D model orientation where applicable.
 
-Library content is provided as a design aid. The designer remains responsible for validating every symbol and footprint before manufacturing.
+Run **ERC** and **DRC** checks as part of the design review. Library availability does not imply that a component has been approved for manufacturing; final verification remains the designer's responsibility.
 
-## Updating the component list
+## Component database
 
-The original project README mentions the following command for scanning the library:
+[DB_Chilaboard_Altium-Library.csv](./DB_Chilaboard_Altium-Library.csv) stores the data used by the online catalog. The web interface loads this file to search, filter, and display component records.
 
-```bash
-python scanlib.py
-```
+If the CSV structure or column names are changed, review the data-processing logic in `index.html` accordingly.
 
-Before running it, verify that **scanlib.py** and its required dependencies are present in your local copy.
+## Contributions and issue reports
 
-## Contributing
+Use the repository [Issues](https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/issues) page to report problems or suggest new libraries. When possible, include the part number, manufacturer, datasheet link, and a clear description of the issue.
 
-Contributions of new or corrected component libraries are welcome. Please keep naming consistent, use manufacturer datasheets as the reference, and verify schematic-to-footprint mapping.
+Please keep file naming consistent, verify symbols and footprints against datasheets, check symbol-to-footprint mappings, and provide technical references for proposed changes.
+
+## License
+
+Use, redistribution, and modification of repository content are governed by the [LICENSE](./LICENSE) file. Review its terms before using or redistributing the content, especially in commercial projects.
 
 ## Guide Images and Diagrams
 
-No standalone guide images or diagrams are currently referenced in this README. Links to relevant visual documentation can be added here when such files are available.
+- [Browse repository images](./Images/)
+- [Altium Library banner](./Images/altium-library-banner.svg)
 
 ---
 
 ## Prepared by
 
-**MEMAR ELECTRONIC SANAT (MES)**  
+**MEMAR ELECTRONIC SANAT (MES)**
+
 *Your partner in designing and building reliable circuits.*
 
 - **GitHub:** [MEMAR-ELECTRONIC-SANAT](https://github.com/MEMAR-ELECTRONIC-SANAT)
