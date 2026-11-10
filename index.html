@@ -8,21 +8,21 @@
    Shahim Vedaei <shahim.vedaei@gmail.com>
    Copywrite: Chilaboard 2026
    -->
-  <title>MES - Component Library</title>
+  <title>ChilaBoard - Component Library</title>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #172b43;
-      --muted: #68798b;
-      --line: #dce5ef;
+      --ink: #242a2e;
+      --muted: #737b80;
+      --line: #e2e6e7;
       --surface: #ffffff;
-      --canvas: #f3f7fc;
-      --accent: #175da8;
-      --accent-light: #e8f1fc;
+      --canvas: #f6f8f8;
+      --accent: #08775c;
+      --accent-light: #e8f4ef;
       --error: #b52d3a;
     }
     * { box-sizing: border-box; }
@@ -67,7 +67,7 @@
     .page-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 25px; }
     h1 { font-size: 27px; font-weight: 600; margin: 0; line-height: 1.3; }
     .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 11px; text-transform: uppercase; }
-    .database-status { display: inline-flex; gap: 7px; align-items: center; font-size: 11px; white-space: nowrap; color: var(--accent); border: 1px solid #c9dcf2; background: var(--accent-light); border-radius: 4px; padding: 5px 9px; }
+    .database-status { display: inline-flex; gap: 7px; align-items: center; font-size: 11px; white-space: nowrap; color: var(--accent); border: 1px solid #cee5db; background: var(--accent-light); border-radius: 4px; padding: 5px 9px; }
     .stats { display: flex; gap: 32px; padding: 18px 0; margin-bottom: 25px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .stat { display: flex; align-items: center; gap: 12px; }
     .stat > svg { color: var(--muted); width: 20px; height: 20px; }
@@ -75,10 +75,10 @@
     .stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
     .toolbar { display: flex; align-items: center; gap: 16px; }
     .search-box { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px 6px 13px; flex: 1; min-width: 0; color: var(--muted); }
-    .search-box:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px #175da80c; }
+    .search-box:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px #08775c0c; }
     #searchInput { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--ink); padding: 6px 0; font-size: 14px; }
     #clearSearch { border: 0; width: 28px; height: 28px; background: transparent; }
-    .type-filters { display: flex; padding: 3px; border: 1px solid var(--line); border-radius: 6px; background: #eaf0f7; flex-shrink: 0; }
+    .type-filters { display: flex; padding: 3px; border: 1px solid var(--line); border-radius: 6px; background: #edf0f0; flex-shrink: 0; }
     .type-btn { padding: 7px 12px; border: 0; border-radius: 4px; background: transparent; font-size: 12px; color: var(--muted); }
     .type-btn.active { background: white; color: var(--ink); box-shadow: 0 1px 3px #0000000d; font-weight: 500; }
     .error { color: var(--error); font-size: 12px; overflow-wrap: anywhere; }
@@ -94,17 +94,17 @@
     .table-scroll { overflow: auto; max-height: 600px; border: 1px solid var(--line); border-radius: 5px; background: var(--surface); scrollbar-width: thin; }
     table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 12px; }
     th, td { padding: 12px 16px; text-align: left; min-width: 100px; max-width: 320px; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; vertical-align: top; }
-    th { position: sticky; top: 0; z-index: 2; background: #edf3fa; color: #697378; font-size: 10px; font-weight: 600; white-space: nowrap; }
-    td:first-child { font: 500 11px/1.6 'IBM Plex Mono', monospace; min-width: 190px; color: #1d416b; }
+    th { position: sticky; top: 0; z-index: 2; background: #f0f3f3; color: #697378; font-size: 10px; font-weight: 600; white-space: nowrap; }
+    td:first-child { font: 500 11px/1.6 'IBM Plex Mono', monospace; min-width: 190px; color: #253b35; }
     th:first-child, td:first-child { position: sticky; left: 0; box-shadow: 1px 0 0 var(--line); }
     th:first-child { z-index: 3; }
     td:first-child { background: var(--surface); z-index: 1; }
     td[data-column="DESCRIPTION"] { min-width: 300px; }
     td[data-column="PATH"] { min-width: 240px; font: 10px/1.6 'IBM Plex Mono', monospace; color: var(--muted); }
     tr:last-child td { border-bottom: 0; }
-    tbody tr:hover td { background: #f0f6fd; }
+    tbody tr:hover td { background: #f3f8f6; }
     .type-badge { display: inline-flex; padding: 2px 6px; border-radius: 3px; background: var(--accent-light); color: var(--accent); font: 10px 'IBM Plex Mono', monospace; white-space: nowrap; }
-    .type-badge.schematic { background: #fff2d5; color: #9a6810; }
+    .type-badge.schematic { background: #fff3d9; color: #8b6416; }
     .download-link { display: inline-flex; gap: 6px; align-items: center; color: var(--accent); text-decoration: none; font-size: 12px; white-space: nowrap; }
     .download-link:hover { text-decoration: underline; }
     .download-link svg { width: 14px; height: 14px; }
@@ -153,117 +153,6 @@
       footer span:last-child { display: none; }
     }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
-  
-    /* MES WCH Configurator visual language */
-    :root {
-      --ink: #eaf1ff;
-      --muted: #a4b9e6;
-      --line: #20418e;
-      --surface: #0a2160;
-      --canvas: #081c4e;
-      --accent: #f5b95f;
-      --accent-light: rgba(245,185,95,.12);
-      --error: #ff7a70;
-      --mes-bg-grid: #0d2564;
-      --mes-panel-2: #102c78;
-      --mes-teal: #4fe3bd;
-    }
-    body {
-      background:
-        linear-gradient(var(--mes-bg-grid) 1px, transparent 1px) 0 0/32px 32px,
-        linear-gradient(90deg, var(--mes-bg-grid) 1px, transparent 1px) 0 0/32px 32px,
-        var(--canvas);
-      color: var(--ink);
-      font-family: 'Inter','Vazirmatn',sans-serif;
-    }
-    #sidebar { background:rgba(6,22,62,.96); border-right-color:var(--line); box-shadow:8px 0 30px rgba(0,0,0,.16); }
-    .brand { border-bottom-color:var(--line); }
-    .brand-mark { background:linear-gradient(145deg,#1a3a8f,#10275f); color:var(--accent); border:1px solid var(--copper-dim, #c08c48); box-shadow:0 0 18px rgba(245,185,95,.12); }
-    .brand-name,h1,.breadcrumb strong,.library-header,.stat-value { color:var(--ink); }
-    .brand-caption,.sidebar-heading h2,.sidebar-footer,.eyebrow,.stat-label,.breadcrumb,.source-link { color:var(--muted); }
-    .sidebar-heading h2,.eyebrow { font-family:'JetBrains Mono','Vazirmatn',monospace; letter-spacing:.06em; }
-    .library-search,.search-box { background:var(--mes-panel-2); border-color:var(--line); color:var(--muted); }
-    .library-search input,#searchInput { color:var(--ink); }
-    .filter-btn { color:var(--muted); border-radius:7px; }
-    .filter-btn:hover { background:rgba(79,227,189,.07); color:var(--ink); }
-    .filter-btn.active { color:var(--accent); background:rgba(245,185,95,.11); box-shadow:inset 2px 0 0 var(--accent); }
-    .filter-count,#libraryCount { color:var(--text-faint,#7288bd); }
-    .sidebar-footer,.topbar,footer { border-color:var(--line); }
-    .topbar { background:rgba(6,22,62,.92); backdrop-filter:blur(8px); }
-    .icon-button { background:var(--mes-panel-2); border-color:var(--line); color:var(--muted); }
-    .icon-button:hover:not(:disabled) { background:#17377f; color:var(--accent); border-color:var(--copper-dim,#c08c48); }
-    .source-link:hover { color:var(--mes-teal); }
-    #content-wrap { animation:reveal .35s ease-out; }
-    .mes-masthead {
-      position:relative; overflow:hidden; display:flex; align-items:center; gap:16px;
-      margin:0 0 30px; padding:18px 22px; min-height:104px;
-      background:linear-gradient(110deg,rgba(16,44,120,.96),rgba(8,28,78,.94));
-      border:1px solid var(--line); border-inline-start:3px solid var(--accent);
-      border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,.2), inset 0 0 28px rgba(79,227,189,.025);
-    }
-    .mes-masthead-mark {
-      width:54px;height:54px;display:grid;place-items:center;flex:none;
-      color:var(--accent);border:1px solid var(--copper-dim,#c08c48);border-radius:12px;
-      background:linear-gradient(145deg,#1a3a8f,#10275f);
-      filter:drop-shadow(0 4px 12px rgba(0,0,0,.28));
-    }
-    .mes-masthead-mark svg { width:34px;height:34px; }
-    .mes-brand-fa { font-family:'Vazirmatn',sans-serif;font-size:19px;font-weight:800;color:#ffd83d;line-height:1.7;text-shadow:0 1px 12px rgba(255,216,61,.22); }
-    .mes-brand-en { font-family:'Space Grotesk','Vazirmatn',sans-serif;font-size:12px;font-weight:700;letter-spacing:.055em;color:var(--ink); }
-    .mes-brand-en span { color:var(--accent); }
-    .mes-brand-slogan { margin-top:4px;font-family:'Vazirmatn',sans-serif;font-size:11px;font-weight:600;color:var(--muted); }
-    .mes-masthead-accent { position:absolute;inset-block:0;inset-inline-end:0;width:5px;background:linear-gradient(180deg,var(--accent),var(--mes-teal));opacity:.9; }
-    .page-heading { align-items:flex-end; }
-    h1 { font-family:'Space Grotesk','Vazirmatn',sans-serif;font-size:28px;font-weight:700;letter-spacing:.01em; }
-    .eyebrow { color:var(--mes-teal); }
-    .database-status { color:var(--mes-teal);border-color:rgba(79,227,189,.35);background:rgba(79,227,189,.09);border-radius:20px; }
-    .status-dot { background:var(--mes-teal);box-shadow:0 0 8px rgba(79,227,189,.65); }
-    .stats { border-color:var(--line); }
-    .stat > svg { color:var(--accent); }
-    .stat-value { font-family:'JetBrains Mono',monospace;color:var(--accent); }
-    .search-box { border-radius:8px; }
-    .search-box:focus-within,.library-search:focus-within { border-color:var(--mes-teal);box-shadow:0 0 0 2px rgba(79,227,189,.08); }
-    #searchInput::placeholder,.library-search input::placeholder { color:#7288bd; }
-    .type-filters { background:#071a47;border-color:var(--line);border-radius:8px; }
-    .type-btn { color:var(--muted);border-radius:6px; }
-    .type-btn:hover { color:var(--ink); }
-    .type-btn.active { color:var(--accent);background:linear-gradient(180deg,#1a3a8f,#10275f);box-shadow:0 0 0 1px rgba(245,185,95,.18) inset;font-weight:600; }
-    .results-bar { color:var(--muted); }
-    #selectedLibraryLabel { color:var(--mes-teal); }
-    .library-header { font-family:'Space Grotesk','Vazirmatn',sans-serif; }
-    .library-header > svg { color:var(--accent); }
-    .group-count { color:var(--text-faint,#7288bd); }
-    .table-scroll { background:var(--surface);border-color:var(--line);border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.14); }
-    table { color:var(--ink); }
-    th { background:#102c78;color:#a4b9e6;border-color:var(--line);font-family:'JetBrains Mono','Vazirmatn',monospace; }
-    th,td { border-bottom-color:var(--line); }
-    td:first-child { color:#aad4ff; }
-    td:first-child,td { background:var(--surface); }
-    tbody tr:hover td { background:#123064; }
-    td:first-child { background:#0b245f; }
-    .type-badge { background:rgba(79,227,189,.1);color:var(--mes-teal);border:1px solid rgba(79,227,189,.18);border-radius:5px; }
-    .type-badge.schematic { background:rgba(245,185,95,.12);color:var(--accent);border-color:rgba(245,185,95,.22); }
-    .download-link { color:var(--mes-teal); }
-    .download-link:hover { color:#7ff0d6; }
-    .pagination { border-color:var(--line);color:var(--muted); }
-    .page-number { color:var(--accent);font-family:'JetBrains Mono',monospace; }
-    .empty-state { border-color:var(--line);color:var(--text-faint,#7288bd); }
-    .empty-state svg { color:var(--mes-teal); }
-    .empty-state h2 { color:var(--ink); }
-    .loading { color:var(--muted); }
-    footer { color:#7288bd; }
-    #sidebarOverlay { background:rgba(4,12,36,.72);backdrop-filter:blur(3px); }
-    :focus-visible { outline-color:var(--mes-teal); }
-    ::selection { background:var(--accent);color:#171717; }
-    @media (max-width:700px) {
-      .mes-masthead { padding:14px;gap:12px; }
-      .mes-masthead-mark { width:44px;height:44px; }
-      .mes-brand-fa { font-size:16px; }
-      .mes-brand-en { font-size:10px; }
-      .mes-brand-slogan { font-size:10px; }
-      h1 { font-size:23px; }
-    }
-
   </style>
 </head>
 <body>
@@ -271,39 +160,24 @@
   <aside id="sidebar">
     <div class="brand">
       <div class="brand-mark"><i data-lucide="cpu" aria-hidden="true"></i></div>
-      <div><div class="brand-name">MES</div><div class="brand-caption">MES · Altium component library</div></div>
+      <div><div class="brand-name">ChilaBoard</div><div class="brand-caption">Altium component library</div></div>
       <button id="closeSidebar" class="icon-button mobile-only" type="button" aria-label="Close libraries" title="Close libraries"><i data-lucide="x"></i></button>
     </div>
     <div class="sidebar-heading"><h2>Libraries</h2><span id="libraryCount">&mdash;</span></div>
     <label class="library-search"><i data-lucide="search" aria-hidden="true"></i><input id="librarySearch" type="search" placeholder="Find a library" aria-label="Find a library" /></label>
     <nav id="libraryFilters" aria-label="Library filters"></nav>
-    <div class="sidebar-footer"><span class="status-dot"></span>MES / Altium</div>
+    <div class="sidebar-footer"><span class="status-dot"></span>ChilaBoard / Altium</div>
   </aside>
   <button id="sidebarOverlay" aria-label="Close libraries" hidden></button>
 
   <main id="main-content">
     <div class="topbar">
       <div class="breadcrumb"><button id="openSidebar" class="icon-button mobile-only" type="button" aria-label="Open libraries" aria-controls="sidebar" aria-expanded="false" title="Open libraries"><i data-lucide="panel-left"></i></button><span>Workspace</span><i data-lucide="chevron-right" aria-hidden="true"></i><strong>Component library</strong></div>
-      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><button id="languageToggle" class="type-btn" type="button" aria-label="Switch language">فارسی</button><button id="aboutToggle" class="type-btn" type="button">About</button><button id="helpToggle" class="type-btn" type="button">Help</button><a class="source-link" href="https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library" target="_blank" rel="noopener noreferrer" title="View MES GitHub repository"><i data-lucide="github" aria-hidden="true"></i><span>Repository</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
+      <a class="source-link" href="https://github.com/chilaboard/Altium-Library" target="_blank" rel="noopener noreferrer" title="View GitHub repository"><i data-lucide="github" aria-hidden="true"></i><span>Repository</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
     </div>
     <div id="content-wrap">
-      <section class="mes-masthead" aria-label="معمار الکترونیک صنعت">
-        <div class="mes-masthead-mark" aria-hidden="true">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="7" y="7" width="34" height="34" rx="8" stroke="currentColor" stroke-width="2.2"/>
-            <path d="M17 17h14v14H17zM24 11v6m0 14v6M11 24h6m14 0h6M20 20h8v8h-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="24" cy="24" r="2" fill="#F4B942"/>
-          </svg>
-        </div>
-        <div class="mes-masthead-copy">
-          <div class="mes-brand-fa">معمار الکترونیک صنعت</div>
-          <div class="mes-brand-en">MEMAR ELECTRONIC SANAT <span>(MES)</span></div>
-          <div class="mes-brand-slogan">همراه شما در مسیر طراحی و ساخت مدارهای مطمئن</div>
-        </div>
-        <div class="mes-masthead-accent" aria-hidden="true"></div>
-      </section>
       <header>
-        <div class="page-heading"><div><p class="eyebrow">MES component catalog</p><h1>Component library</h1></div><span id="databaseStatus" class="database-status"><span class="status-dot"></span><span id="statusText">Loading</span></span></div>
+        <div class="page-heading"><div><p class="eyebrow">ChilaBoard catalog</p><h1>Component library</h1></div><span id="databaseStatus" class="database-status"><span class="status-dot"></span><span id="statusText">Loading</span></span></div>
         <div class="stats" aria-label="Catalog totals">
           <div class="stat"><i data-lucide="boxes" aria-hidden="true"></i><div><div id="totalParts" class="stat-value">&mdash;</div><div class="stat-label">Components</div></div></div>
           <div class="stat"><i data-lucide="folder-open" aria-hidden="true"></i><div><div id="totalLibraries" class="stat-value">&mdash;</div><div class="stat-label">Libraries</div></div></div>
@@ -319,14 +193,8 @@
       <div id="resultsContainer" class="loading">Loading component data...</div>
       <div class="pagination" id="paginationControls"></div>
     </div>
-    <footer><span>MES component library</span><span>Altium Designer &middot; PCB footprints &amp; schematic symbols</span></footer>
+    <footer><span>ChilaBoard component library</span><span>Altium Designer &middot; PCB footprints &amp; schematic symbols</span></footer>
   </main>
-  <div id="mesInfoDialog" hidden role="dialog" aria-modal="true" aria-labelledby="mesInfoTitle" style="position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:#030b20cc;padding:18px">
-    <section style="width:min(560px,100%);background:#0b2458;border:1px solid #1e438b;border-radius:12px;padding:22px;color:#eaf1ff;box-shadow:0 20px 60px #0008">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><h2 id="mesInfoTitle" style="margin:0;font-size:20px">About MES</h2><button id="mesInfoClose" class="icon-button" type="button" aria-label="Close">×</button></div>
-      <div id="mesInfoBody" style="line-height:1.9;margin-top:14px"></div>
-    </section>
-  </div>
 
 
   <script>
@@ -342,30 +210,30 @@
     // --- Data Loading & Pre-processing ---
 
     async function loadCSV() {
-      // Fetch the CSV relative to the deployed site path.
-      const csvUrl = new URL('DB_Chilaboard_Altium-Library.csv', document.baseURI);
-      const response = await fetch(csvUrl, { cache: 'no-cache' });
-      if (!response.ok) throw new Error(`CSV request failed (${response.status}) at ${csvUrl.pathname}.`);
-
+      const response = await fetch('DB_Chilaboard_Altium-Library.csv');
+      if (!response.ok) throw new Error(`CSV request failed (${response.status}).`);
       const csvText = await response.text();
-      if (!csvText.trim()) throw new Error('The component database CSV is empty.');
 
-      // Parse once. The previous parse -> unparse -> parse pipeline was costly
-      // and could stall the page while processing the 1.7 MB database.
-      const parseResult = Papa.parse(csvText, {
-        header: true,
-        skipEmptyLines: 'greedy',
-        transformHeader: header => header.trim()
+      const rawResult = Papa.parse(csvText, {
+        skipEmptyLines: true
       });
-
+      const columnCount = rawResult.data[0]?.length;
+      const records = rawResult.data.filter(row => row.length === columnCount);
+      const skippedRows = rawResult.data.length - records.length;
+      if (skippedRows > 0) {
+        console.warn(`Skipped ${skippedRows} CSV rows with an unexpected field count.`);
+      }
+      const parseResult = Papa.parse(Papa.unparse(records), {
+        header: true,
+        skipEmptyLines: true
+      });
+      parseResult.errors.push(...rawResult.errors);
+      
       if (parseResult.errors.length > 0) {
-        console.error('Errors parsing CSV:', parseResult.errors.slice(0, 10));
-        throw new Error(`CSV parsing failed (${parseResult.errors.length} issue(s)).`);
+        console.error("Errors parsing CSV:", parseResult.errors);
+        throw new Error('The CSV contains invalid syntax.');
       }
-      if (!parseResult.meta.fields || parseResult.data.length === 0) {
-        throw new Error('The CSV did not contain a header or component records.');
-      }
-
+      
       csvColumns = parseResult.meta.fields;
       return parseResult.data;
     }
@@ -531,9 +399,7 @@
             if (columnIndex === csvColumns.length - 1) {
               if (row['PATH']) {
                 const link = document.createElement('a');
-                const libraryFile = (row['PATH'] || '').split(/[\\/]/).pop();
-                const libraryFolder = row['TYPE'] === 'PCBLIB' ? 'AltiumPCBLIB' : 'AltiumSCHLIB';
-                link.href = 'https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/blob/main/' + libraryFolder + '/' + libraryFile.split('/').map(encodeURIComponent).join('/');
+                link.href = column + row['PATH'];
                 link.className = 'download-link';
                 link.textContent = 'Download';
                 link.title = link.href;
@@ -690,10 +556,10 @@
           button.hidden = !(button.dataset.library || 'All libraries').toLowerCase().includes(query);
         });
       });
-      document.querySelectorAll('.type-filters .type-btn').forEach(button => {
+      document.querySelectorAll('.type-btn').forEach(button => {
         button.onclick = () => {
           selectedType = button.dataset.type;
-          document.querySelectorAll('.type-filters .type-btn').forEach(option => {
+          document.querySelectorAll('.type-btn').forEach(option => {
             const active = option === button;
             option.classList.toggle('active', active);
             option.setAttribute('aria-pressed', String(active));
@@ -718,116 +584,6 @@
       }
     });
   </script>
-
-
-  <style>
-    :root {
-      --mes-blue-deep: #123b63;
-      --mes-blue: #175da8;
-      --mes-amber: #f4b942;
-    }
-    body { font-family: 'Vazirmatn', 'IBM Plex Sans', sans-serif; }
-    .mes-masthead {
-      position: relative; display: flex; align-items: center; gap: 18px;
-      min-height: 116px; margin: 0 0 26px; padding: 20px 24px;
-      overflow: hidden; color: #fff; border-radius: 9px;
-      background: linear-gradient(112deg, #123b63 0%, #175da8 72%, #2474bd 100%);
-      box-shadow: 0 7px 20px rgba(18,59,99,.13);
-    }
-    .mes-masthead-mark {
-      width: 62px; height: 62px; flex: 0 0 62px; display: grid; place-items: center;
-      color: #fff; border: 1px solid rgba(255,255,255,.42);
-      border-radius: 13px; background: rgba(255,255,255,.10);
-    }
-    .mes-masthead-mark svg { width: 43px; height: 43px; }
-    .mes-masthead-copy { position: relative; z-index: 1; min-width: 0; }
-    .mes-brand-fa { font-size: 21px; line-height: 1.55; font-weight: 800; }
-    .mes-brand-en { margin-top: 1px; font: 600 13px/1.5 'IBM Plex Sans', sans-serif; letter-spacing: .65px; }
-    .mes-brand-en span { color: #ffd477; }
-    .mes-brand-slogan { margin-top: 5px; color: #e4effb; font-size: 12px; }
-    .mes-masthead-accent {
-      position: absolute; width: 170px; height: 170px; border: 1px solid rgba(244,185,66,.32);
-      border-radius: 50%; right: 5%; top: -92px; box-shadow: 0 0 0 17px rgba(244,185,66,.06), 0 0 0 35px rgba(244,185,66,.04);
-    }
-    body[dir="rtl"] .mes-masthead { direction: rtl; }
-    body[dir="rtl"] .mes-masthead-accent { right: auto; left: 5%; }
-    #languageToggle { border:1px solid var(--line); background:var(--surface); color:var(--accent); border-radius:5px; padding:7px 12px; font-weight:600; }
-    @media(max-width:700px) {
-      .mes-masthead { min-height: 100px; gap: 12px; padding: 16px; margin-bottom: 22px; }
-      .mes-masthead-mark { width: 50px; height: 50px; flex-basis: 50px; }
-      .mes-masthead-mark svg { width: 36px; height: 36px; }
-      .mes-brand-fa { font-size: 17px; }
-      .mes-brand-en { font-size: 10px; letter-spacing: .2px; }
-      .mes-brand-slogan { font-size: 10px; }
-    }
-  </style>
-  <style>
-    #languageToggle { border:1px solid var(--line); background:var(--surface); color:var(--accent); border-radius:5px; padding:7px 12px; font-weight:600; }
-    body[dir="rtl"] { direction:rtl; }
-    body[dir="rtl"] #sidebar { border-right:0; border-left:1px solid var(--line); }
-    body[dir="rtl"] .brand, body[dir="rtl"] .sidebar-heading, body[dir="rtl"] .library-search,
-    body[dir="rtl"] .filter-btn, body[dir="rtl"] .topbar, body[dir="rtl"] .breadcrumb,
-    body[dir="rtl"] .page-heading, body[dir="rtl"] .toolbar, body[dir="rtl"] .results-bar,
-    body[dir="rtl"] footer { direction:rtl; }
-    body[dir="rtl"] .filter-btn, body[dir="rtl"] th, body[dir="rtl"] td { text-align:right; }
-    body[dir="rtl"] #sidebar { right:0; left:auto; }
-    body[dir="rtl"] .source-link { direction:ltr; }
-    body[dir="rtl"] .type-filters { direction:rtl; }
-    @media(max-width:700px) { body[dir="rtl"] #sidebar { transform:translateX(100%); } body[dir="rtl"].sidebar-open #sidebar { transform:translateX(0); } }
-  </style>
-  <style>#mesInfoDialog[hidden]{display:none!important}</style>
-  <script>
-    const mesTranslations = {
-      en:{workspace:'Workspace',componentLibrary:'Component library',libraries:'Libraries',findLibrary:'Find a library',repository:'Repository',catalog:'MES component catalog',componentLibraryTitle:'Altium component library',components:'Components',librariesCount:'Libraries',dataFields:'Data fields',search:'Search components...',allParts:'All parts',footprints:'Footprints',symbols:'Symbols',allLibraries:'All libraries',loading:'Loading component data...',connected:'Connected',unavailable:'Unavailable',noMatches:'No matching components',download:'Download',about:'About MES',help:'Help',aboutBody:'<b>MEMAR ELECTRONIC SANAT (MES)</b><br>Reliable electronic design and manufacturing. This catalog provides Altium PCB footprints and schematic symbols. <br><br><a href="https://github.com/MEMAR-ELECTRONIC-SANAT" target="_blank" rel="noopener">GitHub organization</a> · <a href="https://t.me/Memar_Electronic" target="_blank" rel="noopener">Telegram</a> · <a href="https://www.instagram.com/Memar.Electronic" target="_blank" rel="noopener">Instagram</a>',helpBody:'<b>Using the catalog</b><ul><li>Search components by name or fields. Regular-expression syntax is supported.</li><li>Choose a library in the sidebar to filter results.</li><li>Use All parts, Footprints, or Symbols to filter component types.</li><li>Use Download to open the component library file on GitHub.</li><li>Use the language button to switch between English and Persian.</li></ul>'},
-      fa:{workspace:'میز کار',componentLibrary:'کتابخانه قطعات',libraries:'کتابخانه‌ها',findLibrary:'جست‌وجوی کتابخانه',repository:'مخزن گیت‌هاب',catalog:'کاتالوگ قطعات MES',componentLibraryTitle:'کتابخانه قطعات آلتیوم',components:'قطعات',librariesCount:'کتابخانه‌ها',dataFields:'فیلدهای اطلاعاتی',search:'جست‌وجوی قطعه...',allParts:'همه قطعات',footprints:'فوت‌پرینت‌ها',symbols:'نمادهای شماتیک',allLibraries:'همه کتابخانه‌ها',loading:'در حال بارگذاری اطلاعات قطعات...',connected:'متصل',unavailable:'در دسترس نیست',noMatches:'قطعه‌ای با این مشخصات پیدا نشد',download:'دریافت فایل',about:'درباره ما',help:'راهنما',aboutBody:'<b>معمار الکترونیک صنعت (MES)</b><br>همراه شما در مسیر طراحی و ساخت مدارهای مطمئن. این کاتالوگ شامل فوت‌پرینت‌های PCB و نمادهای شماتیک آلتیوم است.<br><br><a href="https://github.com/MEMAR-ELECTRONIC-SANAT" target="_blank" rel="noopener">گیت‌هاب</a> · <a href="https://t.me/Memar_Electronic" target="_blank" rel="noopener">تلگرام</a> · <a href="https://www.instagram.com/Memar.Electronic" target="_blank" rel="noopener">اینستاگرام</a>',helpBody:'<b>راهنمای استفاده از کاتالوگ</b><ul><li>برای جست‌وجوی قطعه از نام یا فیلدهای اطلاعاتی استفاده کنید؛ جست‌وجوی عبارت منظم (Regex) نیز پشتیبانی می‌شود.</li><li>از فهرست سمت راست/چپ، کتابخانه موردنظر را انتخاب کنید.</li><li>با گزینه‌های همه قطعات، فوت‌پرینت‌ها یا نمادها نوع قطعه را فیلتر کنید.</li><li>دکمه دریافت فایل، فایل کتابخانه را در GitHub باز می‌کند.</li><li>با دکمه زبان بین فارسی و انگلیسی جابه‌جا شوید.</li></ul>'}
-    };
-    let mesLanguage='en';
-    function setMesLanguage(lang){
-      mesLanguage=lang;const t=mesTranslations[lang];document.documentElement.lang=lang;document.body.dir=lang==='fa'?'rtl':'ltr';
-      document.getElementById('languageToggle').textContent=lang==='fa'?'English':'فارسی';
-      document.getElementById('aboutToggle').textContent=t.about;document.getElementById('helpToggle').textContent=t.help;
-      document.querySelector('.breadcrumb span').textContent=t.workspace;document.querySelector('.breadcrumb strong').textContent=t.componentLibrary;
-      document.querySelector('.sidebar-heading h2').textContent=t.libraries;document.getElementById('librarySearch').placeholder=t.findLibrary;
-      document.querySelector('.source-link span').textContent=t.repository;document.querySelector('.eyebrow').textContent=t.catalog;document.querySelector('h1').textContent=t.componentLibraryTitle;
-      document.querySelectorAll('.stat-label')[0].textContent=t.components;document.querySelectorAll('.stat-label')[1].textContent=t.librariesCount;document.querySelectorAll('.stat-label')[2].textContent=t.dataFields;
-      document.getElementById('searchInput').placeholder=t.search;const typeButtons=document.querySelectorAll('.type-filters .type-btn');typeButtons[0].textContent=t.allParts;typeButtons[1].textContent=t.footprints;typeButtons[2].textContent=t.symbols;
-      document.getElementById('selectedLibraryLabel').textContent=t.allLibraries;document.querySelector('footer span:first-child').textContent='MES · '+(lang==='fa'?'کتابخانه قطعات آلتیوم':'Altium component library');
-      document.querySelector('footer span:last-child').textContent=lang==='fa'?'Altium Designer · فوت‌پرینت‌های PCB و نمادهای شماتیک':'Altium Designer · PCB footprints & schematic symbols';
-      document.querySelectorAll('.download-link').forEach(a=>{const icon=a.querySelector('i');a.textContent=t.download;if(icon)a.prepend(icon);});
-      document.querySelectorAll('.filter-btn').forEach(btn=>{const label=btn.querySelector('.filter-label');if(label&&btn.dataset.library==='')label.textContent=t.allLibraries;});
-      const empty=document.querySelector('.empty-state h2');if(empty)empty.textContent=t.noMatches;
-    }
-    function showMesInfo(kind){const t=mesTranslations[mesLanguage];document.getElementById('mesInfoTitle').textContent=kind==='about'?t.about:t.help;document.getElementById('mesInfoBody').innerHTML=kind==='about'?t.aboutBody:t.helpBody;document.getElementById('mesInfoDialog').hidden=false;}
-    document.addEventListener('DOMContentLoaded',()=>{
-      document.getElementById('languageToggle').addEventListener('click',()=>setMesLanguage(mesLanguage==='en'?'fa':'en'));
-      document.getElementById('aboutToggle').addEventListener('click',()=>showMesInfo('about'));document.getElementById('helpToggle').addEventListener('click',()=>showMesInfo('help'));
-      document.getElementById('mesInfoClose').addEventListener('click',()=>document.getElementById('mesInfoDialog').hidden=true);
-      document.getElementById('mesInfoDialog').addEventListener('click',e=>{if(e.target.id==='mesInfoDialog')e.currentTarget.hidden=true;});
-      const target=document.getElementById('resultsContainer');new MutationObserver(()=>{if(mesLanguage==='fa'){target.querySelectorAll('.download-link').forEach(a=>{const icon=a.querySelector('i');a.textContent=mesTranslations.fa.download;if(icon)a.prepend(icon);});const h=target.querySelector('.empty-state h2');if(h)h.textContent=mesTranslations.fa.noMatches;}}).observe(target,{childList:true,subtree:true});
-      setMesLanguage('fa');
-    });
-  </script> <!-- Final WCH Configurator background and surface override -->
-  <style id="mes-wch-background-final">
-    :root {
-      --canvas:#07183f; --surface:#0b2458; --mes-panel-2:#102e6b;
-      --line:#1e438b; --ink:#eaf1ff; --muted:#a4b9e6;
-      --accent:#f5b95f; --accent-light:rgba(245,185,95,.12);
-      --mes-bg-grid:#102b68; --mes-teal:#4fe3bd;
-    }
-    html,body { min-height:100%; background-color:#07183f !important; }
-    body {
-      background-image:linear-gradient(rgba(16,43,104,.72) 1px,transparent 1px),linear-gradient(90deg,rgba(16,43,104,.72) 1px,transparent 1px) !important;
-      background-size:32px 32px !important; background-color:#07183f !important;
-      color:#eaf1ff !important;
-    }
-    #sidebar,.topbar { background:rgba(5,18,51,.97) !important; }
-    #content-wrap { background:transparent !important; }
-    .library-search,.search-box,.type-filters,.table-scroll,.icon-button { background-color:#102e6b !important; }
-    th { background:#102e6b !important; color:#a4b9e6 !important; }
-    td,td:first-child { background:#0b2458 !important; color:#eaf1ff; }
-    tbody tr:hover td { background:#123064 !important; }
-    footer,.sidebar-footer { background:rgba(5,18,51,.92) !important; }
-  </style>
 
 </body>
 </html>
