@@ -342,30 +342,30 @@
     // --- Data Loading & Pre-processing ---
 
     async function loadCSV() {
-      const response = await fetch('DB_Chilaboard_Altium-Library.csv');
-      if (!response.ok) throw new Error(`CSV request failed (${response.status}).`);
-      const csvText = await response.text();
+      // Fetch the CSV relative to the deployed site path.
+      const csvUrl = new URL('DB_Chilaboard_Altium-Library.csv', document.baseURI);
+      const response = await fetch(csvUrl, { cache: 'no-cache' });
+      if (!response.ok) throw new Error(`CSV request failed (${response.status}) at ${csvUrl.pathname}.`);
 
-      const rawResult = Papa.parse(csvText, {
-        skipEmptyLines: true
-      });
-      const columnCount = rawResult.data[0]?.length;
-      const records = rawResult.data.filter(row => row.length === columnCount);
-      const skippedRows = rawResult.data.length - records.length;
-      if (skippedRows > 0) {
-        console.warn(`Skipped ${skippedRows} CSV rows with an unexpected field count.`);
-      }
-      const parseResult = Papa.parse(Papa.unparse(records), {
+      const csvText = await response.text();
+      if (!csvText.trim()) throw new Error('The component database CSV is empty.');
+
+      // Parse once. The previous parse -> unparse -> parse pipeline was costly
+      // and could stall the page while processing the 1.7 MB database.
+      const parseResult = Papa.parse(csvText, {
         header: true,
-        skipEmptyLines: true
+        skipEmptyLines: 'greedy',
+        transformHeader: header => header.trim()
       });
-      parseResult.errors.push(...rawResult.errors);
-      
+
       if (parseResult.errors.length > 0) {
-        console.error("Errors parsing CSV:", parseResult.errors);
-        throw new Error('The CSV contains invalid syntax.');
+        console.error('Errors parsing CSV:', parseResult.errors.slice(0, 10));
+        throw new Error(`CSV parsing failed (${parseResult.errors.length} issue(s)).`);
       }
-      
+      if (!parseResult.meta.fields || parseResult.data.length === 0) {
+        throw new Error('The CSV did not contain a header or component records.');
+      }
+
       csvColumns = parseResult.meta.fields;
       return parseResult.data;
     }
