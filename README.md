@@ -1,11 +1,4 @@
-<div align="center">
-
-<h3><strong>کتابخانه آلتیوم شامل بیش از ۵۰۰۰ قطعه، با فوت‌پرینت‌های مطابق با استاندارد ⁦IPC⁩ و مدل‌های سه‌بعدی با فرمت ⁦STEP⁩</strong></h3>
-
-<h3><strong>‎ Altium Library with over 5000 components, IPC compliant footprints, including 3D step model</strong></h3>
-
-</div>
-
+![Altium Library — MES](Images/altium-library-banner.svg)
 
 # Altium Library | کتابخانه قطعات Altium Designer
 
