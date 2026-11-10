@@ -837,6 +837,28 @@
       setMesLanguage('en');
     });
   </script>
+  <!-- Final WCH Configurator background and surface override -->
+  <style id="mes-wch-background-final">
+    :root {
+      --canvas:#07183f; --surface:#0b2458; --mes-panel-2:#102e6b;
+      --line:#1e438b; --ink:#eaf1ff; --muted:#a4b9e6;
+      --accent:#f5b95f; --accent-light:rgba(245,185,95,.12);
+      --mes-bg-grid:#102b68; --mes-teal:#4fe3bd;
+    }
+    html,body { min-height:100%; background-color:#07183f !important; }
+    body {
+      background-image:linear-gradient(rgba(16,43,104,.72) 1px,transparent 1px),linear-gradient(90deg,rgba(16,43,104,.72) 1px,transparent 1px) !important;
+      background-size:32px 32px !important; background-color:#07183f !important;
+      color:#eaf1ff !important;
+    }
+    #sidebar,.topbar { background:rgba(5,18,51,.97) !important; }
+    #content-wrap { background:transparent !important; }
+    .library-search,.search-box,.type-filters,.table-scroll,.icon-button { background-color:#102e6b !important; }
+    th { background:#102e6b !important; color:#a4b9e6 !important; }
+    td,td:first-child { background:#0b2458 !important; color:#eaf1ff; }
+    tbody tr:hover td { background:#123064 !important; }
+    footer,.sidebar-footer { background:rgba(5,18,51,.92) !important; }
+  </style>
 
 </body>
 </html>
