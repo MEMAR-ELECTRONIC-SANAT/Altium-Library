@@ -741,7 +741,7 @@
             if (columnIndex === csvColumns.length - 1) {
               if (row['PATH']) {
                 const link = document.createElement('a');
-                link.href = column + row['PATH'];
+                link.href = 'https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/' + row['PATH'].split('/').map(encodeURIComponent).join('/');
                 link.className = 'download-link';
                 link.textContent = t('download');
                 link.title = link.href;
