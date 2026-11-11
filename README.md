@@ -10,7 +10,7 @@
 
 ## دسترسی سریع
 
-- **[ورود به کاتالوگ آنلاین قطعات (GitHub Pages)](https://memar-electronic-sanat.github.io/Altium-Library/)**
+- **<a href="https://memar-electronic-sanat.github.io/Altium-Library/" target="_blank" rel="noopener noreferrer">ورود به کاتالوگ آنلاین قطعات (GitHub Pages)</a>**
 - [مشاهده فایل‌های کتابخانه PCB](./AltiumPCBLIB/)
 - [مشاهده فایل‌های کتابخانه شماتیک](./AltiumSCHLIB/)
 - [دریافت پایگاه داده قطعات (CSV)](./DB_MEMAR_Altium-Library.csv)
@@ -154,7 +154,7 @@ The repository is organized and presented by **MEMAR ELECTRONIC SANAT (MES)** to
 
 ## Quick access
 
-- **[Open the online component catalog (GitHub Pages)](https://memar-electronic-sanat.github.io/Altium-Library/)**
+- **<a href="https://memar-electronic-sanat.github.io/Altium-Library/" target="_blank" rel="noopener noreferrer">Open the online component catalog (GitHub Pages)</a>**
 - [PCB libraries](./AltiumPCBLIB/)
 - [Schematic libraries](./AltiumSCHLIB/)
 - [Component database (CSV)](./DB_MEMAR_Altium-Library.csv)
