@@ -22,7 +22,7 @@
 
 ## معرفی کاتالوگ آنلاین
 
-فایل [index.html](./index.html) رابط وب این مخزن است. این صفحه اطلاعات قطعات را از فایل CSV موجود در ریشه مخزن می‌خواند و امکان مرور و جست‌وجوی کاتالوگ را فراهم می‌کند.
+[کاتالوگ آنلاین قطعات](https://memar-electronic-sanat.github.io/Altium-Library/) رابط وب این مخزن است. برای مشاهده کد منبع، فایل [index.html](https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/blob/main/index.html) را باز کنید. این صفحه اطلاعات قطعات را از فایل CSV موجود در ریشه مخزن می‌خواند و امکان مرور و جست‌وجوی کاتالوگ را فراهم می‌کند.
 
 قابلیت‌های رابط وب (نسخه دوزبانه FA/EN، نسخه رابط 1.8):
 
@@ -50,7 +50,7 @@
 | [AltiumSCHLIB](./AltiumSCHLIB/) | کتابخانه‌های شماتیک با فرمت `.SchLib` |
 | [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) | پایگاه داده مورد استفاده کاتالوگ آنلاین |
 | [Images](./Images/) | تصاویر و فایل‌های گرافیکی راهنما |
-| [index.html](./index.html) | رابط وب کاتالوگ قطعات |
+| [کاتالوگ آنلاین](https://memar-electronic-sanat.github.io/Altium-Library/) (فایل اجرایی)؛ [index.html](https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/blob/main/index.html) (کد منبع) |
 | [.nojekyll](./.nojekyll) | فایل کمکی برای انتشار مستقیم محتوا در GitHub Pages |
 
 ## انواع کتابخانه
@@ -162,7 +162,7 @@ The repository is organized and presented by **MEMAR ELECTRONIC SANAT (MES)** to
 
 ## Online catalog
 
-[index.html](./index.html) provides the web interface. It loads component information from the CSV database stored in the repository root.
+[The online component catalog](https://memar-electronic-sanat.github.io/Altium-Library/) provides the web interface. To inspect its source code, open [index.html](https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/blob/main/index.html). It loads component information from the CSV database stored in the repository root.
 
 The bilingual FA/EN interface (UI version 1.8) includes:
 
@@ -190,7 +190,7 @@ The catalog loads its component data from [DB_MEMAR_Altium-Library.csv](./DB_MEM
 | [AltiumSCHLIB](./AltiumSCHLIB/) | Schematic libraries in `.SchLib` format |
 | [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) | Component database used by the web catalog |
 | [Images](./Images/) | Repository images and graphics |
-| [index.html](./index.html) | Web-based component catalog |
+| [Online catalog](https://memar-electronic-sanat.github.io/Altium-Library/) (live page); [index.html](https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/blob/main/index.html) (source code) |
 | [.nojekyll](./.nojekyll) | Helper file for direct content publishing with GitHub Pages |
 
 ## Library types
