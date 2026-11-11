@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="210" viewBox="0 0 1200 210" role="img" aria-labelledby="title desc">
   <title id="title">Altium Library — MES</title>
-  <desc id="desc">کتابخانه آلتیوم شامل بیش از ۵۰۰۰ قطعه؛ فوت‌پرینت‌های مطابق با استاندارد IPC و مدل‌های سه‌بعدی با فرمت STEP. Altium Library with over 5000 components, IPC compliant footprints, including 3D STEP models.</desc>
+  <desc id="desc">بیشتر از 300 کتابخانه آلتیوم شامل بیش از 10000 قطعه، با فوت‌پرینت‌های مطابق با استاندارد IPC و مدل‌های سه‌بعدی با فرمت STEP. Altium Library with over 10000 components, IPC compliant footprints.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B1F40"/><stop offset="1" stop-color="#123D70"/></linearGradient>
     <linearGradient id="trace" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#46E0CF"/><stop offset="1" stop-color="#75B7FF"/></linearGradient>
@@ -20,8 +20,8 @@
   </g>
   <rect x="150" y="18" width="900" height="174" rx="12" fill="#07182F" opacity=".52" stroke="#4D83B5" stroke-width="1.2"/>
   <rect x="530" y="31" width="140" height="3" rx="1.5" fill="url(#accent)"/>
-  <text x="600" y="82" text-anchor="middle" fill="#FFFFFF" font-family="Vazirmatn, Tahoma, Arial, sans-serif" font-size="18" font-weight="600" direction="rtl" unicode-bidi="plaintext">کتابخانه آلتیوم شامل بیش از ۵۰۰۰ قطعه</text>
-  <text x="600" y="113" text-anchor="middle" fill="#FFFFFF" font-family="Vazirmatn, Tahoma, Arial, sans-serif" font-size="18" font-weight="600" direction="rtl" unicode-bidi="plaintext">فوت‌پرینت‌های مطابق با استاندارد IPC و مدل‌های سه‌بعدی با فرمت STEP</text>
-  <text x="600" y="158" text-anchor="middle" fill="#DCEBFA" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="500">Altium Library with over 5000 components, IPC compliant footprints, including 3D STEP models</text>
+  <text x="600" y="78" text-anchor="middle" fill="#FFFFFF" font-family="Vazirmatn, Tahoma, Arial, sans-serif" font-size="18" font-weight="600" direction="rtl" unicode-bidi="plaintext">بیشتر از 300 کتابخانه آلتیوم شامل بیش از 10000 قطعه</text>
+  <text x="600" y="111" text-anchor="middle" fill="#FFFFFF" font-family="Vazirmatn, Tahoma, Arial, sans-serif" font-size="17" font-weight="600" direction="rtl" unicode-bidi="plaintext">با فوت‌پرینت‌های مطابق با استاندارد IPC و مدل‌های سه‌بعدی با فرمت STEP</text>
+  <text x="600" y="158" text-anchor="middle" fill="#DCEBFA" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="500">Altium Library with over 10000 components, IPC compliant footprints,</text>
   <rect x="558" y="174" width="84" height="3" rx="1.5" fill="url(#accent)"/>
 </svg>
