@@ -619,7 +619,7 @@
       }
 
       csvColumns = parseResult.meta.fields;
-      downloadBase = csvColumns.find(c => /^https?:\/\//i.test(c)) || csvColumns[csvColumns.length - 1] || '';
+      downloadBase = 'https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/';
       displayColumns = buildDisplayColumns(csvColumns);
       return parseResult.data;
     }
@@ -1136,7 +1136,8 @@
 
     function buildDownloadButton(row) {
       const link = document.createElement('a');
-      link.href = downloadBase + row['PATH'];
+      const libraryPath = String(row['PATH'] || '').replace(/\\/g, '/').split('/').filter(Boolean).map(encodeURIComponent).join('/');
+      link.href = downloadBase + libraryPath;
       link.className = 'download-link';
       link.title = link.href;
       link.setAttribute('aria-label', t('downloadAria')(row['NAME'] || libraryName(row['PATH'])));
