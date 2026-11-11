@@ -540,7 +540,7 @@
     let filteredData = [];
     let csvColumns = [];
     let displayColumns = [];  // display order: NAME, DOWNLOAD, TYPE, DESCRIPTION, PATH, HEIGHT, then extra fields
-    let downloadBase = '';    // CSV URL column used as the prefix for download links
+    const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/';
     let uniqueLibraries = [];
     let selectedLibrary = null; // null means 'All'
     let selectedType = '';
@@ -617,7 +617,6 @@
       }
 
       csvColumns = parseResult.meta.fields;
-      downloadBase = csvColumns.find(c => /^https?:\/\//i.test(c)) || csvColumns[csvColumns.length - 1] || '';
       displayColumns = buildDisplayColumns(csvColumns);
       return parseResult.data;
     }
@@ -787,7 +786,7 @@
             const cell = document.createElement('td');
             cell.dataset.column = column === DOWNLOAD_COL ? 'DOWNLOAD' : column;
             if (column === DOWNLOAD_COL) {
-              if (row['PATH'] && downloadBase) cell.appendChild(buildDownloadButton(row));
+              if (row['PATH']) cell.appendChild(buildDownloadButton(row));
             } else if (column === 'NAME') {
               const nameBtn = document.createElement('button');
               nameBtn.type = 'button';
@@ -1134,7 +1133,8 @@
 
     function buildDownloadButton(row) {
       const link = document.createElement('a');
-      link.href = downloadBase + row['PATH'];
+      const relativePath = String(row['PATH'] || '').replace(/^\/+/, '');
+      link.href = GITHUB_RAW_BASE + relativePath.split('/').map(encodeURIComponent).join('/');
       link.className = 'download-link';
       link.title = link.href;
       link.setAttribute('aria-label', t('downloadAria')(row['NAME'] || libraryName(row['PATH'])));
@@ -1184,7 +1184,7 @@
 
       const actions = document.getElementById('detailActions');
       actions.innerHTML = '';
-      if (row['PATH'] && downloadBase) actions.appendChild(buildDownloadButton(row));
+      if (row['PATH']) actions.appendChild(buildDownloadButton(row));
 
       detailOverlay.classList.add('open');
       detailCard.scrollTop = 0;
