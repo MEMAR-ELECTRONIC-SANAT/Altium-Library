@@ -24,7 +24,7 @@
 
 [کاتالوگ آنلاین قطعات](https://memar-electronic-sanat.github.io/Altium-Library/) رابط وب این مخزن است. برای مشاهده کد منبع، فایل [index.html](https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/blob/main/index.html) را باز کنید. این صفحه اطلاعات قطعات را از فایل CSV موجود در ریشه مخزن می‌خواند و امکان مرور و جست‌وجوی کاتالوگ را فراهم می‌کند.
 
-قابلیت‌های رابط وب (نسخه دوزبانه FA/EN، نسخه رابط 1.8):
+قابلیت‌های رابط وب (نسخه دوزبانه FA/EN، نسخه رابط 1.9):
 
 - رابط کاربری دوزبانه فارسی و انگلیسی با امکان تغییر زبان از نوار بالای صفحه
 - پشتیبانی از چیدمان راست‌به‌چپ (RTL) در حالت فارسی و چپ‌به‌راست (LTR) در حالت انگلیسی
@@ -37,7 +37,8 @@
 - فیلتر قطعات بر اساس نوع کتابخانه؛ شامل **Footprint** و **Schematic Symbol**
 - فیلتر و انتخاب کتابخانه موردنظر از نوار کناری
 - نمایش گروه‌بندی‌شده قطعات، شمارنده‌ها و صفحه‌بندی نتایج
-- دسترسی مستقیم به پیوند دریافت فایل کتابخانه متناظر از مخزن GitHub
+- دکمهٔ دانلود مستقل در ستون دوم جدول، بلافاصله پس از نام قطعه؛ دریافت مستقیم فایل متناظر از مخزن GitHub
+- نمایش جزئیات کامل قطعه با کلیک روی نام آن، بدون شروع دانلود
 - طراحی واکنش‌گرا برای نمایشگرهای دسکتاپ و تلفن همراه
 
 کاتالوگ داده‌ها را از فایل [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) در ریشه مخزن دریافت می‌کند. برای عملکرد صحیح، صفحه باید از طریق GitHub Pages یا یک وب‌سرور HTTP اجرا شود؛ بازکردن مستقیم فایل با پروتکل `file://` ممکن است به دلیل محدودیت امنیتی مرورگر در دسترسی به CSV با خطا مواجه شود.
@@ -98,7 +99,7 @@
 
 ## پایگاه داده قطعات
 
-فایل CSV فعلی شامل **10,972 رکورد** و **12 ستون** است: 4,284 رکورد از نوع `PCBLIB` و 6,688 رکورد از نوع `SCHLIB`. کاتالوگ نسخه 1.8 این فایل را از ریشه مخزن و با نام `DB_MEMAR_Altium-Library.csv` بارگذاری می‌کند.
+فایل CSV فعلی شامل **10,972 رکورد** و **12 ستون** است: 4,284 رکورد از نوع `PCBLIB` و 6,688 رکورد از نوع `SCHLIB`. کاتالوگ نسخه 1.9 این فایل را از ریشه مخزن و با نام `DB_MEMAR_Altium-Library.csv` بارگذاری می‌کند.
 
 **اصلاحات ساختاری:** 7 رکورد مربوط به قطعات `LTC2955`، `LTC2954`، `LTC2951` و `MAX16054` با 7 ردیف اطلاعاتی جابه‌جا‌شده ادغام شدند؛ مسیر کتابخانه به `AltiumSCHLIB/pwr_onoff_toggle.SchLib` اصلاح شد. نام ستون دوازدهم نیز از URL نامرتبط به `LAST_MODIFIED` تغییر یافت. پس از اصلاح، تمام 10,972 رکورد دقیقاً 12 ستون دارند و هیچ رکوردی فاقد `PATH` نیست.
 
@@ -164,7 +165,7 @@ The repository is organized and presented by **MEMAR ELECTRONIC SANAT (MES)** to
 
 [The online component catalog](https://memar-electronic-sanat.github.io/Altium-Library/) provides the web interface. To inspect its source code, open [index.html](https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/blob/main/index.html). It loads component information from the CSV database stored in the repository root.
 
-The bilingual FA/EN interface (UI version 1.8) includes:
+The bilingual FA/EN interface (UI version 1.9) includes:
 
 - Persian and English language switching from the top toolbar
 - Right-to-left (RTL) layout for Persian and left-to-right (LTR) layout for English
@@ -177,7 +178,8 @@ The bilingual FA/EN interface (UI version 1.8) includes:
 - Type filters for **PCB Footprints** and **Schematic Symbols**
 - Sidebar library selection and filtering
 - Grouped results, live counters, and pagination
-- Direct links to the corresponding library files in the GitHub repository
+- A dedicated Download button in the second table column, immediately after the component name, for direct retrieval of the corresponding GitHub library file
+- A component-details dialog opened by clicking the component name; downloading remains a separate action
 - Responsive layout for desktop and mobile screens
 
 The catalog loads its component data from [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) in the repository root. For reliable operation, serve the page through GitHub Pages or an HTTP web server. Opening the HTML file directly with the `file://` protocol may prevent the browser from loading the CSV database.
@@ -225,7 +227,7 @@ Run **ERC** and **DRC** checks as part of the design review. Library availabilit
 
 ## Component database
 
-The current CSV contains **10,972 records** and **12 columns**: 4,284 `PCBLIB` records and 6,688 `SCHLIB` records. The v1.8 web catalog loads this root-level file as `DB_MEMAR_Altium-Library.csv`.
+The current CSV contains **10,972 records** and **12 columns**: 4,284 `PCBLIB` records and 6,688 `SCHLIB` records. The v1.9 web catalog loads this root-level file as `DB_MEMAR_Altium-Library.csv`.
 
 **Structural repairs:** The 7 records for `LTC2955`, `LTC2954`, `LTC2951`, and `MAX16054` were reconstructed by merging them with their 7 displaced continuation rows. Their library path now points to `AltiumSCHLIB/pwr_onoff_toggle.SchLib`. The twelfth column header was changed from an unrelated URL to `LAST_MODIFIED`. After repair, all 10,972 records have exactly 12 columns and none has an empty `PATH`.
 
