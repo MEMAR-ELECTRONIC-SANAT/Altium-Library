@@ -1,4 +1,4 @@
-![Altium Library — MES](Images/altium-library-banner.svg)
+![MES Animated Hero Banner](Images/GitHub-Assets/MES-Hero-Banner.svg)
 
 ![MES Divider](https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/Images/MES-Divider.svg)
 
@@ -22,9 +22,13 @@
 
 ---
 
+![MES Section Header](Images/GitHub-Assets/MES-Section-Header.svg)
+
 ## معرفی کاتالوگ آنلاین
 
 [کاتالوگ آنلاین قطعات](https://memar-electronic-sanat.github.io/Altium-Library/) رابط وب این مخزن است. برای مشاهده کد منبع، فایل [index.html](https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/blob/main/index.html) را باز کنید. این صفحه اطلاعات قطعات را از فایل CSV موجود در ریشه مخزن می‌خواند و امکان مرور و جست‌وجوی کاتالوگ را فراهم می‌کند.
+
+![MES Project Card](Images/GitHub-Assets/MES-Project-Card.svg)
 
 قابلیت‌های رابط وب (نسخه دوزبانه FA/EN، نسخه رابط 1.9):
 
@@ -107,6 +111,8 @@
 
 **نکته اعتبارسنجی باقی‌مانده:** یک مسیر دیگر در داده‌ها با فایل موجود در مخزن تطبیق ندارد: `AltiumSCHLIB/adc_power_monitor.SchLib`. این مورد خارج از 14 ردیف اصلاح‌شده است و برای سالم بودن لینک مربوط به آن باید جداگانه بررسی شود.
 
+![MES Status Strip](Images/GitHub-Assets/MES-Status-Strip.svg)
+
 فایل [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) داده‌های موردنیاز کاتالوگ آنلاین را نگهداری می‌کند. رابط وب این فایل را بارگذاری کرده و اطلاعات آن را برای جست‌وجو، فیلتر و نمایش قطعات به‌کار می‌گیرد.
 
 در صورت ویرایش ساختار یا نام ستون‌های CSV، منطق پردازش داده در `index.html` نیز باید متناسب با آن بررسی و به‌روزرسانی شود.
@@ -129,9 +135,24 @@
 ## تصاویر و دیاگرام‌های راهنما
 
 - [مشاهده پوشه تصاویر مخزن](./Images/)
+- [مشاهده دارایی‌های گرافیکی GitHub](./Images/GitHub-Assets/)
 - [تصویر سربرگ کتابخانه Altium](./Images/altium-library-banner.svg)
+- [سربرگ متحرک MES](./Images/GitHub-Assets/MES-Hero-Banner.svg)
+- [نمایشگرهای متحرک بخش، پروژه و وضعیت](./Images/GitHub-Assets/)
+
+### استفاده از دارایی‌های گرافیکی در شبکه‌های اجتماعی
+
+فایل‌های SVG متحرک این مجموعه برای نمایش در GitHub و صفحات وب طراحی شده‌اند. برای انتشار در تلگرام و اینستاگرام، SVG را مستقیماً به‌عنوان محتوای متحرک بارگذاری نکنید؛ از خروجی‌های تبدیل‌شده استفاده کنید:
+
+- **GIF:** مناسب انیمیشن‌های کوتاه در تلگرام
+- **MP4:** گزینه پیشنهادی برای پست، استوری و Reels اینستاگرام و همچنین تلگرام
+- **PNG/JPG:** برای نسخه ثابت یا تصویر پیش‌نمایش
+
+فایل SVG اصلی را به‌عنوان نسخه مرجع نگه دارید تا کیفیت و قابلیت ویرایش گرافیک حفظ شود.
 
 ---
+
+![MES Thank You Footer](Images/GitHub-Assets/MES-Thank-You-Footer.svg)
 
 ![MES Divider](https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/Images/MES-Divider.svg)
 
@@ -165,9 +186,13 @@ The repository is organized and presented by **MEMAR ELECTRONIC SANAT (MES)** to
 - [Component database (CSV)](./DB_MEMAR_Altium-Library.csv)
 - [Images and graphics](./Images/)
 
+![MES Section Header](Images/GitHub-Assets/MES-Section-Header.svg)
+
 ## Online catalog
 
 [The online component catalog](https://memar-electronic-sanat.github.io/Altium-Library/) provides the web interface. To inspect its source code, open [index.html](https://github.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/blob/main/index.html). It loads component information from the CSV database stored in the repository root.
+
+![MES Project Card](Images/GitHub-Assets/MES-Project-Card.svg)
 
 The bilingual FA/EN interface (UI version 1.9) includes:
 
@@ -237,6 +262,8 @@ The current CSV contains **10,972 records** and **12 columns**: 4,284 `PCBLIB` r
 
 **Remaining validation note:** One other CSV path does not match a file in the repository: `AltiumSCHLIB/adc_power_monitor.SchLib`. This is outside the 14 repaired rows and should be checked separately before relying on that entry's download link.
 
+![MES Status Strip](Images/GitHub-Assets/MES-Status-Strip.svg)
+
 [DB_MEMAR_Altium-Library.csv](./DB_MEMAR_Altium-Library.csv) stores the data used by the online catalog. The web interface loads this file to search, filter, and display component records.
 
 If the CSV structure or column names are changed, review the data-processing logic in `index.html` accordingly.
@@ -254,9 +281,22 @@ Use, redistribution, and modification of repository content are governed by the 
 ## Guide Images and Diagrams
 
 - [Browse repository images](./Images/)
+- [Browse GitHub graphic assets](./Images/GitHub-Assets/)
 - [Altium Library banner](./Images/altium-library-banner.svg)
 
+### Using graphic assets on social media
+
+These animated SVG files are intended for GitHub and web pages. For Telegram and Instagram, do not rely on direct SVG animation support. Export the artwork to a suitable delivery format:
+
+- **GIF:** useful for short animations on Telegram
+- **MP4:** recommended for Instagram posts, Stories, and Reels, and also suitable for Telegram
+- **PNG/JPG:** for static previews or cover images
+
+Keep the original SVG files as the editable master assets.
+
 ---
+
+![MES Thank You Footer](Images/GitHub-Assets/MES-Thank-You-Footer.svg)
 
 ![MES Divider](https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/Images/MES-Divider.svg)
 
