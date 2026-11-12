@@ -1,5 +1,7 @@
 ![Altium Library — MES](Images/altium-library-banner.svg)
 
+![MES Divider](https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/Images/MES-Divider.svg)
+
 # کتابخانه قطعات Altium Designer | MES Altium Library
 
 مخزن **MES Altium Library** مجموعه‌ای از کتابخانه‌های قطعات الکترونیکی برای استفاده در نرم‌افزار **Altium Designer** است. این مجموعه، فایل‌های کتابخانه شماتیک و PCB را همراه با یک کاتالوگ وب برای جست‌وجو و دریافت فایل‌های قطعات ارائه می‌کند.
@@ -131,6 +133,8 @@
 
 ---
 
+![MES Divider](https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/Images/MES-Divider.svg)
+
 ## تهیه و تدوین
 
 **معمار الکترونیک صنعت**  
@@ -253,6 +257,8 @@ Use, redistribution, and modification of repository content are governed by the 
 - [Altium Library banner](./Images/altium-library-banner.svg)
 
 ---
+
+![MES Divider](https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/Images/MES-Divider.svg)
 
 ## Prepared by
 
