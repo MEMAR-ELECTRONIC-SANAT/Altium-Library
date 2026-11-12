@@ -1,4 +1,4 @@
-![MES Animated Hero Banner](Images/GitHub-Assets/MES-Hero-Banner.svg)
+![Altium Library — MES](Images/altium-library-banner.svg)
 
 ![MES Divider](https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/Images/MES-Divider.svg)
 
