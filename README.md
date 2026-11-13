@@ -1,6 +1,6 @@
 ![Altium Library — MES](Images/altium-library-banner.svg)
 
-![MES Divider](https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/Images/MES-Divider.svg)
+![MES Divider](Images/GitHub-Assets/MES-Divider.svg)
 
 # کتابخانه قطعات Altium Designer | MES Altium Library
 
@@ -154,7 +154,7 @@
 
 ![MES Thank You Footer](Images/GitHub-Assets/MES-Thank-You-Footer.svg)
 
-![MES Divider](https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/Images/MES-Divider.svg)
+![MES Divider](Images/GitHub-Assets/MES-Divider.svg)
 
 ## تهیه و تدوین
 
@@ -298,7 +298,7 @@ Keep the original SVG files as the editable master assets.
 
 ![MES Thank You Footer](Images/GitHub-Assets/MES-Thank-You-Footer.svg)
 
-![MES Divider](https://raw.githubusercontent.com/MEMAR-ELECTRONIC-SANAT/Altium-Library/main/Images/MES-Divider.svg)
+![MES Divider](Images/GitHub-Assets/MES-Divider.svg)
 
 ## Prepared by
 
