@@ -96,3 +96,5 @@ Symbol views, pin numbering, electrical properties, and symbol-to-footprint exam
 - [Instagram](https://www.instagram.com/Memar.Electronic)
 
 [Explore more tutorials](https://github.com/MEMAR-ELECTRONIC-SANAT)
+
+![MES Animated Logo](../Images/GitHub-Assets/MES_Animated_Logo_640x480.svg)
