@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="Images/GitHub-Assets/MES_Animated_Logo_640x480.svg" width="360" alt="MES Animated Logo">
+</p>
+
 ![Altium Library — MES](Images/altium-library-banner.svg)
 
 ![MES Divider](Images/GitHub-Assets/MES-Divider.svg)
