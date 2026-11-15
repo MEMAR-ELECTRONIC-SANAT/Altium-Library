@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Images/GitHub-Assets/MES_Animated_Logo_640x480.svg" width="360" alt="MES Animated Logo">
+
 </p>
 
 ![Altium Library — MES](Images/altium-library-banner.svg)
@@ -162,7 +162,7 @@
 
 ## تهیه و تدوین
 
-**معمار الکترونیک صنعت**  
+**معمار الکترونیک صنعت**
 **MEMAR ELECTRONIC SANAT (MES)**
 
 *همراه شما در مسیر طراحی و ساخت مدارهای مطمئن*
@@ -314,3 +314,5 @@ Keep the original SVG files as the editable master assets.
 - **Telegram:** [Memar Electronic](https://t.me/Memar_Electronic)
 - **Instagram:** [Memar Electronic](https://www.instagram.com/Memar.Electronic)
 - **More tutorials:** [MES GitHub](https://github.com/MEMAR-ELECTRONIC-SANAT)
+
+![MES Animated Logo](Images/GitHub-Assets/MES_Animated_Logo_640x480.svg)
