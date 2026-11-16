@@ -1,3 +1,60 @@
+> [!IMPORTANT]
+> ## منبع اصلی کتابخانه و توضیحات
+>
+> این مخزن صرفاً یک کپی از کتابخانه **Altium Library** متعلق به **چیلابرد، مهندس بورقانی** است. تنها بخش توسعه‌یافته در این مخزن، نرم‌افزار رابط و ارتباطی برای دسترسی و جست‌وجوی کتابخانه است که آن نیز با الهام از ساختار و ایده‌های مخزن اصلی چیلابرد تغییر داده شده است. بنابراین، اصل کتابخانه و زحمات تهیه آن متعلق به مهندس بورقانی است و این مخزن ادعایی درباره مالکیت یا تولید مستقل محتوای کتابخانه ندارد.
+>
+> ### ویژگی‌های کتابخانه چیلابرد
+>
+> - جامع و رایگان
+> - مطابق با استاندارد IPC
+> - حاصل ۱۶ سال تلاش و تجربه
+> - دسترسی آسان و همیشگی از طریق GitHub
+> - به‌روزرسانی هفتگی
+> - فوت‌پرینت‌ها همراه با مدل سه‌بعدی دقیق
+> - ارائه پارت‌نامبر قطعات برای خرید و مشخصات کلیدی اولیه جهت انتخاب قطعه
+>
+> ### منابع و آموزش‌های کتابخانه اصلی
+>
+> ۱. [نشانی کتابخانه در گیت‌هاب](https://t.me/chilaboard/1980)
+>
+> ۲. [روش استفاده از کتابخانه](https://t.me/chilaboard/1981)
+>
+> ۳. [نصب و استفاده از GitHub Desktop برای به‌روز نگه‌داشتن کتابخانه](https://t.me/chilaboard/1983)
+>
+> ۴. [آموزش نصب کتابخانه در Altium Designer](https://t.me/chilaboard/1192)
+>
+> ۵. [آموزش جست‌وجو و یافتن قطعات در کتابخانه](https://t.me/chilaboard/1958)
+>
+> **مخزن اصلی:** [chilaboard/Altium-Library](https://github.com/chilaboard/Altium-Library)
+>
+> ---
+>
+> ## Original Library Source and Acknowledgment
+>
+> This repository is a copy of the **Altium Library** created and maintained by **Chilaboard (Engineer Borghani)**. The only independently modified part in this repository is the interface/communication software used to access and search the library, which was also adapted with inspiration from the original Chilaboard GitHub repository. The original library content and the effort behind it belong to Engineer Borghani; this repository does not claim original authorship or ownership of that library content.
+>
+> ### Key features of the original Chilaboard library
+>
+> - Comprehensive and free to use
+> - Designed in accordance with IPC standards
+> - The result of 16 years of dedicated work and experience
+> - Easy, permanent access through GitHub
+> - Weekly updates
+> - Footprints accompanied by accurate 3D models
+> - Component part numbers for purchasing, along with essential initial specifications to support component selection
+>
+> ### Original library resources and tutorials
+>
+> 1. [Original library on GitHub](https://t.me/chilaboard/1980)
+> 2. [How to use the library](https://t.me/chilaboard/1981)
+> 3. [Install and use GitHub Desktop to keep the library up to date](https://t.me/chilaboard/1983)
+> 4. [How to install the library in Altium Designer](https://t.me/chilaboard/1192)
+> 5. [How to search for and find components in the library](https://t.me/chilaboard/1958)
+>
+> **Original repository:** [chilaboard/Altium-Library](https://github.com/chilaboard/Altium-Library)
+>
+> ---
+ 
 <p align="center">
 
 </p>
